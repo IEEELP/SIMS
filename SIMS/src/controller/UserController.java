@@ -27,6 +27,8 @@ public class UserController extends HttpServlet {
             }
         }else if (sims==2){
 
+        }else if (sims==3){
+
         }
     }
 
