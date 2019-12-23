@@ -6,19 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3e10baf-2771-45cf-ae56-7e20c3aaa78e" name="Default Changelist" comment="项目初始化--李璞">
-      <change afterPath="$PROJECT_DIR$/src/controller/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/impl/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/intf/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/impl/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/intf/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/js/.gitxxx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/pages/.gitxxx" afterDir="false" />
+    <list default="true" id="d3e10baf-2771-45cf-ae56-7e20c3aaa78e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_beanutils_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/SIMS/META-INF/SIMS.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/SIMS/utils/JDBCUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/impl/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/intf/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/intf/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/JDBCUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SIMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SIMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/controller/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/impl/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/dao/impl/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/intf/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/dao/intf/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/domain/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/impl/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/service/impl/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/intf/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/service/intf/.gitxxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/.gitxxx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/utils/.gitxxx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -49,6 +56,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/controller/Servlet.java" />
         <option value="$PROJECT_DIR$/src/service/test.java" />
+        <option value="$PROJECT_DIR$/src/domain/User.java" />
+        <option value="$PROJECT_DIR$/src/utils/JDBCUtils.java" />
+        <option value="$PROJECT_DIR$/src/dao/impl/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/dao/intf/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/service/intf/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/service/impl/UserService.java" />
+        <option value="$PROJECT_DIR$/src/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -89,8 +103,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -121,7 +135,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.JDBCUtils">
+    <configuration name="JDBCUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.JDBCUtils" />
+      <module name="SIMS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.1" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -197,6 +224,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JDBCUtils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
@@ -212,7 +244,9 @@
       <workItem from="1577008810583" duration="560000" />
       <workItem from="1577009600510" duration="766000" />
       <workItem from="1577012238786" duration="415000" />
-      <workItem from="1577014026028" duration="2046000" />
+      <workItem from="1577014026028" duration="2736000" />
+      <workItem from="1577077271194" duration="20000" />
+      <workItem from="1577077347744" duration="4235000" />
     </task>
     <task id="LOCAL-00001" summary="项目初始化--李璞">
       <created>1577009938573</created>
@@ -249,26 +283,33 @@
       <option name="project" value="LOCAL" />
       <updated>1577014927948</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="项目初始化--李璞">
+      <created>1577016087661</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1577016087661</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4124000" />
+    <option name="totallyTimeSpent" value="9069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4951246" visible="true" weight="0.26066098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4911147" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.5048754" side_tool="true" visible="true" weight="0.26066098" />
+      <window_info id="Web" order="7" sideWeight="0.5088853" side_tool="true" visible="true" weight="0.26599148" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,59 +353,97 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
     <entry file="file://$PROJECT_DIR$/src/controller/Servlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/controller/test.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/dao/impl/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/dao/intf/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/service/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/domain/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/service/impl/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/service/intf/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/utils/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="1625">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/impl/test.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/JDBCUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="375">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/intf/test.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/impl/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="225">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/test.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/intf/IUserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="50">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/test.java">
+    <entry file="file://$PROJECT_DIR$/src/service/intf/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="275">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/impl/test.java">
+    <entry file="file://$PROJECT_DIR$/src/service/impl/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="390">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/intf/test.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="297">
+          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
