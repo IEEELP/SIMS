@@ -29,7 +29,6 @@ public class UserService implements IUserService {
     @Override
     public Boolean login(User user) throws Exception {
         User userByUsername = dao.findUserByUsername(user.getUsername());
-        System.out.println("数据库密码： "+userByUsername.getPassword());
         String password = userByUsername.getPassword();
         if (password==null||password==""){
             return false;
