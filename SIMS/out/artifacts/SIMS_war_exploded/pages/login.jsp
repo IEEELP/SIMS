@@ -20,7 +20,7 @@
         <input type="submit" value="登录" id="loginbtn">
         <input type="hidden" name="sims" value="0">
     </form>
-    <input type="button" value="去注册" id="toregister">
+    <input type="button" value="去注册>" id="toregister">
 </div><!--登录框-->
 <div class="foot"></div><!--底部框-->
 <script src="../js/login.js"></script>

@@ -17,14 +17,16 @@
         <span id="passmessage"></span>
         <span class="email"></span><input type="text" placeholder="请输入邮箱" id="email" name="email">
         <span id="emailmessage"></span>
+        <input type="text" id="code">
+        <span><img src = "/Check" id = "codeImage" alt="验证码图片"/></span>
         <input type="submit" value="注册" id="registerbtn">
         <input type="hidden" name="sims" value="1">
         <input type="hidden" name="type" value="0">
     </form>
-    <input type="button" value="去登录" id="tologin">
+    <input type="button" value="去登录>" id="tologin">
 </div><!--注册框-->
 <div class="foot"></div><!--底部框-->
-<script src="../js/login.js"></script>
+<script src="../js/regiser.js"></script>
 </body>
 </html>
 

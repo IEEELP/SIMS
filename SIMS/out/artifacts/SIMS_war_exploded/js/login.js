@@ -1,25 +1,12 @@
 
+var toregister=document.getElementById("toregister");
+toregister.onmouseover=function () {//去注册的颜色的变化
+    this.style.color="#ff0000";
+};
+toregister.onmouseout=function () {
+    this.style.color="#000";
+};
 
-var logindiv=document.getElementById("logindiv");
-var registerdiv=document.getElementById("registerdiv");
-if (toregister){
-    var toregister=document.getElementById("toregister");
-    toregister.onmouseover=function () {//去注册的颜色的变化
-        this.style.color="#ff0000";
-    };
-    toregister.onmouseout=function () {
-        this.style.color="#000";
-    };
-}
-if (tologin){
-    var tologin=document.getElementById("tologin");
-    tologin.onmouseover=function () {//去登录的颜色变化
-        this.style.color="#f00";
-    };
-    tologin.onmouseout=function () {
-        this.style.color="#000";
-    };
-}
 var username=document.getElementById("username");
 var usermessage=document.getElementById("usermessage");
 var password=document.getElementById("password");
@@ -55,25 +42,7 @@ function checkpass() {
         return true;
     }
 }
-var emailmessage=document.getElementById("emailmessage");
-var registerbtn=document.getElementById("registerbtn");
-registerbtn.onclick=function () {
-  var flag=true;
-  if (!checkuser2()) flag=false;
-  if (!checkpass2()) flag=false;
-  if (!checkemail()) flag=false;
-  return false;
+var codeImage=document.getElementById("codeImage");
+codeImage.onclick=function () {
+    this.src=this.src+"?"+Math.random();
 };
-
-function checkemail() {
-    if (email.value==""){
-        emailmessage.innerText="邮箱不能为空";
-        emailmessage.style.color="#d00";
-        emailmessage.style.fontSize="14px";
-        emailmessage.style.lineHeight="40px";
-        return false;
-    } else {
-        emailmessage.innerText="";
-        return true;
-    }
-}

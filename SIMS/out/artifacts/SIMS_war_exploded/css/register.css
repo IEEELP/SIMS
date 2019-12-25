@@ -34,7 +34,7 @@ body{
     height: 500px;
 }
 
-.banner,.user,.pass,.email,#username,#usermessage,#password,#passmessage,.email,#email,#emailmessage,#registerbtn,#tologin{
+.banner,.user,.pass,.email,#username,#usermessage,#password,#passmessage,.email,#email,#emailmessage,#registerbtn,#tologin,#code,#codeImage{
     position: absolute;
 }
 .banner{
@@ -44,7 +44,7 @@ body{
     margin-left: -100px;
     top:20px;
 }
-#username,#password,#email{
+#username,#password,#email,#code{
     height: 40px;
     width: 300px;
     box-sizing: border-box;
@@ -100,10 +100,22 @@ body{
 #emailmessage{
     top: 220px;
 }
+#code{
+    width: 150px;
+    height: 40px;
+    top:280px;
+    left: 300px;
+}
+#codeImage{
+    width: 130px;
+    height: 36px;
+    top: 282px;
+    left: 460px;
+}
 #registerbtn{
     width: 120px;
     height: 35px;
-    top: 300px;
+    top: 340px;
     left: 300px;
     border: 1px solid #7DC4DB;
     outline: none;
@@ -116,7 +128,7 @@ body{
     border: 0;
     outline: none;
     top: 360px;
-    left: 300px;
+    left: 720px;
     font-size: 18px;
     cursor: pointer;
 }
