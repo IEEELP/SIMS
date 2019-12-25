@@ -17,7 +17,7 @@ body{
     background-color: #0a96e1;
     background-image:radial-gradient(closest-side, #29C4FD 30%, #0F6CB1 100%);
 }
-.logindiv,.registerdiv{
+.registerdiv{
     width: 850px;
     height: 400px;
     background-color: #fff;
@@ -33,10 +33,8 @@ body{
 .space{
     height: 500px;
 }
-#login{
-    width: 800px;
-}
-.banner,.user,.pass,#username,#password,#code,#codeImage,#loginbtn,#toregister,#usermessage{
+
+.banner,.user,.pass,.email,#username,#usermessage,#password,#passmessage,.email,#email,#emailmessage,#registerbtn,#tologin{
     position: absolute;
 }
 .banner{
@@ -46,7 +44,7 @@ body{
     margin-left: -100px;
     top:20px;
 }
-#username,#password,#code{
+#username,#password,#email{
     height: 40px;
     width: 300px;
     box-sizing: border-box;
@@ -65,7 +63,7 @@ body{
     content: "\e971";
     font-size: 35px;
 }
-#usermessage,#passmessage{
+#usermessage,#passmessage,#emailmessage{
     top: 100px;
     left: 650px;
 }
@@ -85,18 +83,24 @@ body{
     content: "\e98f";
     font-size: 35px;
 }
-#code{
-    width: 150px;
-    top:220px;
+#email{
+    top: 220px;
     left: 300px;
 }
-#codeImage{
-    width: 130px;
-    height: 36px;
-    top: 222px;
-    left: 460px;
+.email::before{
+    font-family: "icomoon";
+    content: "\ea83";
+    font-size: 35px;
 }
-#loginbtn{
+.email{
+    top: 220px;
+    left: 260px;
+    line-height: 40px;
+}
+#emailmessage{
+    top: 220px;
+}
+#registerbtn{
     width: 120px;
     height: 35px;
     top: 300px;
@@ -107,7 +111,7 @@ body{
     cursor: pointer;
     background-image: linear-gradient(to top,#D1E3ED,#FFFFFF);
 }
-#toregister{
+#tologin{
     background-color: rgba(255,255,255,0);
     border: 0;
     outline: none;

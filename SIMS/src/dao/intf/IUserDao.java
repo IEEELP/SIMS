@@ -9,8 +9,12 @@ import java.util.List;
 public interface IUserDao {
     //查询所有用户信息
     List<User> findAll() throws Exception;
-    //删除用户信息
+    //根据用户名删除用户信息
     void deleteByUsername(String username)throws Exception;
-    //修改用户密码
+    //根据用户名修改用户密码
     void updateByUsername(String username,String password)throws Exception;
+    //根据用户查询用户信息。
+    User  findUserByUsername(String username);
+    //插入一条用户信息
+    void insert(User user);
 }

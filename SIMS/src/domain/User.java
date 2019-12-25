@@ -10,6 +10,7 @@ public class User {
     private String email;       //电子邮件
     private String password;    //密码
     private Date time;          //注册时间
+    private int type;           //用户类型 0普通用户 1管理员
 
     public String getUsername() {
         return username;
@@ -43,6 +44,26 @@ public class User {
         this.time = time;
     }
 
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public User() {
+    }
+
+    public User(String username, String email, String password, Date time, int type) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.time = time;
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -50,16 +71,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", time=" + time +
+                ", type=" + type +
                 '}';
-    }
-
-    public User(String username, String email, String password, Date time) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.time = time;
-    }
-
-    public User() {
     }
 }
