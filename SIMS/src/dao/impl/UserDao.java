@@ -1,10 +1,15 @@
 package dao.impl;
 
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.pool.DruidPooledConnection;
 import dao.intf.IUserDao;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.JDBCUtils;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserDao implements IUserDao {
@@ -31,12 +36,22 @@ public class UserDao implements IUserDao {
     }
     //根据用户名查询单个用户信息
     @Override
-    public User findUserByUsername(String username) {
-        return null;
+    public User findUserByUsername(String username) throws Exception {
+        QueryRunner queryRunner = new QueryRunner();
+        DruidPooledConnection connection = JDBCUtils.getDataSource().getConnection();
+        Object[] param={username};
+        User result = queryRunner.query(connection, "select * from user where username=?", new BeanHandler<User>(User.class), param);
+        connection.close();
+        return result;
     }
     //插入一条用户数据
     @Override
-    public void insert(User user) {
-
+    public int insert(User user) throws Exception {
+        QueryRunner queryRunner=new QueryRunner();
+        DruidPooledConnection connection = JDBCUtils.getDataSource().getConnection();
+        Object[] param={user.getUsername(),user.getPassword(),user.getType(),user.getEmail()};
+        int result = queryRunner.update(connection, "insert into user(username,password,type,email) values(?,?,?,?)", param);
+        connection.close();
+        return result;
     }
 }

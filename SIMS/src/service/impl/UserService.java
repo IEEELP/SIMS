@@ -9,19 +9,54 @@ import java.util.List;
 
 public class UserService implements IUserService {
     IUserDao dao=new UserDao();
-    //查询所有用户信息
+
+    /**查询所有用户信息
+     *
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<User> findAll() throws Exception {
         List<User> result = dao.findAll();
         return result;
     }
-    //用户登录
-    @Override
-    public void login(User user) {
-    }
-    //用户注册
-    @Override
-    public void register(User user) {
 
+    /**用户登录
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public Boolean login(User user) throws Exception {
+        User userByUsername = dao.findUserByUsername(user.getUsername());
+        System.out.println("数据库密码： "+userByUsername.getPassword());
+        String password = userByUsername.getPassword();
+        if (password==null||password==""){
+            return false;
+        }
+        if (password.equals(user.getPassword())){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**用户注册
+     *
+     * @param user
+     */
+    @Override
+    public Boolean register(User user) throws Exception {
+        User userByUsername =null;
+        userByUsername = dao.findUserByUsername(user.getUsername());
+        //用户已经存在
+        if (userByUsername==null){
+            int insert = dao.insert(user);
+            if (insert==1){
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }

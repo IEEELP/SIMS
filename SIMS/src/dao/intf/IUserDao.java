@@ -4,6 +4,7 @@ package dao.intf;
  */
 import domain.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserDao {
@@ -14,7 +15,7 @@ public interface IUserDao {
     //根据用户名修改用户密码
     void updateByUsername(String username,String password)throws Exception;
     //根据用户查询用户信息。
-    User  findUserByUsername(String username);
+    User  findUserByUsername(String username) throws Exception;
     //插入一条用户信息
-    void insert(User user);
+    int insert(User user)throws Exception;
 }
