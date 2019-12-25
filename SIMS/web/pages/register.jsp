@@ -17,7 +17,7 @@
         <span id="passmessage"></span>
         <span class="email"></span><input type="text" placeholder="请输入邮箱" id="email" name="email">
         <span id="emailmessage"></span>
-        <input type="text" id="code">
+        <input type="text" id="code" name="code">
         <span><img src = "/Check" id = "codeImage" alt="验证码图片"/></span>
         <input type="submit" value="注册" id="registerbtn">
         <input type="hidden" name="sims" value="1">

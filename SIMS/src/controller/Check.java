@@ -1,6 +1,7 @@
 package controller;
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.util.Random;
 
 @javax.servlet.annotation.WebServlet("/Check")
 public class Check extends javax.servlet.http.HttpServlet {
+    @Override
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         //创建图片指定宽度和高度以及颜色类型。
         BufferedImage bufferedImage=new BufferedImage(200,50, BufferedImage.TYPE_INT_RGB);
@@ -30,6 +32,9 @@ public class Check extends javax.servlet.http.HttpServlet {
         char a2 = src.charAt(index2);
         char a3 = src.charAt(index3);
         char a4 = src.charAt(index4);
+        HttpSession session = request.getSession();
+        char[] chars = {a1,a2,a3,a4};
+        session.setAttribute("drawCode",new String(chars));
         graphics.setFont(font);
         graphics.drawString(a1+"",25,35);//写字符。
         graphics.drawString(a2+"",75,35);
@@ -48,7 +53,7 @@ public class Check extends javax.servlet.http.HttpServlet {
         }
         ImageIO.write(bufferedImage,"jpg",response.getOutputStream());
     }
-
+    @Override
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         this.doPost(request, response);
     }

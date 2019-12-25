@@ -15,7 +15,7 @@
         <span id="usermessage"></span>
         <span class="pass"></span><input type="password" placeholder="请输入密码" id="password" name="password">
         <span id="passmessage"></span>
-        <input type="text" id="code">
+        <input type="text" id="code" name="code">
         <span><img src = "/Check" id = "codeImage" alt="验证码图片"/></span>
         <input type="submit" value="登录" id="loginbtn">
         <input type="hidden" name="sims" value="0">
