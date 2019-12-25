@@ -26,9 +26,8 @@ public class UserController extends HttpServlet {
         user.setEmail(email);
         //if-start
         if (sims == 0) { //用户登录
-            Boolean login = null;
             try {
-                login = userService.login(user);
+                Boolean  login = userService.login(user);
                 if (login) {
                     //登陆成功，重定向
                     response.sendRedirect("/pages/main.jsp");
