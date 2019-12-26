@@ -1,6 +1,5 @@
 package dao.impl;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import dao.intf.IUserDao;
 import domain.User;
@@ -9,7 +8,6 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.JDBCUtils;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserDao implements IUserDao {

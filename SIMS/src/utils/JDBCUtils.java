@@ -10,7 +10,7 @@ public class JDBCUtils {
         dataSource = new DruidDataSource();
         dataSource.setUsername("root");
         dataSource.setPassword("root");
-        dataSource.setUrl("jdbc:mysql:///sims");
+        dataSource.setUrl("jdbc:mysql:///sims?useUnicode=true&characterEncoding=UTF-8");
     }
     public static DruidDataSource getDataSource() {
         return dataSource;
