@@ -77,9 +77,9 @@ public class StudentDao implements IStudentDao {
     public void insert(Student student) throws SQLException {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {student.getName(),student.getSex(),student.getBirthday(),
-                                student.getSpeciality().getId(),student.getDomitory().getId(),student.getSno()};
+                                student.getSno()};
         queryRunner.update(
-                "insert into student(name,sex,birthday,specialityid,domitoryid,sno) values(?,?,?,?,?,?)", param);
+                "insert into student(name,sex,birthday,sno) values(?,?,?,?)", param);
     }
 
 }

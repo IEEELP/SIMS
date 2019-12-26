@@ -13,10 +13,28 @@ public class Student {
     private int sex;                //性别 0女 1男
     private Date birthday;          //出生年月
     private int sno;                //学号
+    private int domitoryid;         //宿舍编号 外键
+    private int specialityid;       //专业编号 外键
     private Domitory domitory;      //所属宿舍信息
     private Speciality speciality;  //所属专业信息
     private String sexStr;
     private String birthdayStr;
+
+    public int getDomitoryid() {
+        return domitoryid;
+    }
+
+    public void setDomitoryid(int domitoryid) {
+        this.domitoryid = domitoryid;
+    }
+
+    public int getSpecialityid() {
+        return specialityid;
+    }
+
+    public void setSpecialityid(int specialityid) {
+        this.specialityid = specialityid;
+    }
 
     public String getBirthdayStr() {
         if (birthday!=null){
