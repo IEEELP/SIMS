@@ -6,16 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bdfb039-277f-4837-a5b2-18e9dd7a2b42" name="Default Changelist" comment="">
+    <list default="true" id="0bdfb039-277f-4837-a5b2-18e9dd7a2b42" name="Default Changelist" comment="用户登陆注册功能 --邱广润">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/DomitoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/SpecialityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Domitory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Speciality.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/StringDateTransformUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SIMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SIMS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SIMS_war_exploded/WEB-INF/classes/controller/Check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SIMS_war_exploded/WEB-INF/classes/controller/Check.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SIMS/controller/Check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SIMS/controller/Check.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/pages/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/pages/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SIMS/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,47 +36,14 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/Check.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="36" column="38" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/domain/User.java" />
         <option value="$PROJECT_DIR$/web/css/register.css" />
         <option value="$PROJECT_DIR$/web/css/login.css" />
         <option value="$PROJECT_DIR$/web/pages/main.jsp" />
@@ -91,6 +65,13 @@
         <option value="$PROJECT_DIR$/web/js/login.js" />
         <option value="$PROJECT_DIR$/web/pages/register.jsp" />
         <option value="$PROJECT_DIR$/src/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/domain/Domitory.java" />
+        <option value="$PROJECT_DIR$/src/domain/Course.java" />
+        <option value="$PROJECT_DIR$/src/domain/Speciality.java" />
+        <option value="$PROJECT_DIR$/src/utils/StringDateTransformUtils.java" />
+        <option value="$PROJECT_DIR$/src/domain/Student.java" />
+        <option value="$PROJECT_DIR$/src/domain/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/domain/User.java" />
       </list>
     </option>
   </component>
@@ -102,7 +83,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="190" />
+    <option name="x" value="227" />
+    <option name="y" value="112" />
     <option name="width" value="1595" />
     <option name="height" value="1060" />
   </component>
@@ -112,45 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -159,7 +103,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/Tomcat/apache-tomcat-9.0.1/lib/jsp-api.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -178,10 +122,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\java\jdk1.8.0_121\jre" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="SIMS:war exploded">
           <settings>
@@ -267,6 +211,11 @@
       <workItem from="1577258099569" duration="649000" />
       <workItem from="1577262320314" duration="7494000" />
       <workItem from="1577280156755" duration="5133000" />
+      <workItem from="1577286746136" duration="1334000" />
+      <workItem from="1577349613226" duration="615000" />
+      <workItem from="1577354041911" duration="2269000" />
+      <workItem from="1577356331593" duration="332000" />
+      <workItem from="1577356784349" duration="382000" />
     </task>
     <task id="LOCAL-00001" summary="用户登陆注册功能 --邱广润">
       <created>1577269417207</created>
@@ -279,22 +228,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19477000" />
+    <option name="totallyTimeSpent" value="24409000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8356164" visible="true" weight="0.20107238" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8309859" visible="true" weight="0.21162046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" sideWeight="0.16438356" side_tool="true" visible="true" weight="0.20107238" />
+      <window_info id="Web" order="7" sideWeight="0.16901408" side_tool="true" visible="true" weight="0.21162046" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.58640224" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.58640224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.21671388" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,19 +300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#939#940#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/JDBCUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -372,20 +308,6 @@
             <element signature="e#397#398#0" expanded="true" />
             <element signature="e#430#431#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/intf/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -424,34 +346,172 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SIMS.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="425">
           <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/Check.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="38" />
+        <state relative-caret-position="570">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/service/intf/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="625">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/Check.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="400">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/DomitoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SpecialityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/StringDateTransformUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="12" column="78" lean-forward="true" selection-start-line="12" selection-start-column="78" selection-end-line="12" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Domitory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Speciality.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/Teacher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -469,7 +529,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

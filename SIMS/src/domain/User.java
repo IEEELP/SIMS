@@ -1,9 +1,11 @@
 package domain;
 
+import utils.StringDateTransformUtils;
+
 import java.util.Date;
 
 /*
-用户名实体类
+用户实体类
  */
 public class User {
     private String username;    //用户名
@@ -11,6 +13,7 @@ public class User {
     private String password;    //密码
     private Date time;          //注册时间
     private int type;           //用户类型 0普通用户 1管理员
+    private String timeStr;
 
     public String getUsername() {
         return username;
@@ -54,6 +57,18 @@ public class User {
     }
 
     public User() {
+    }
+
+    public String getTimeStr() {
+        if (time!=null){
+            StringDateTransformUtils utils=new StringDateTransformUtils();
+            timeStr=utils.DateToString(time);
+        }
+        return timeStr;
+    }
+
+    public void setTimeStr(String timeStr) {
+        this.timeStr = timeStr;
     }
 
     public User(String username, String email, String password, Date time, int type) {
