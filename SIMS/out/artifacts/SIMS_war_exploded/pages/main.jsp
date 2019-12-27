@@ -13,7 +13,7 @@
     <ul class="menu">
         <li id="usermanner" class="bigslide">用户管理
             <ul id="userul">
-                <li id="userlist" name="userlist"><a href="javascript:0">用户查询</a></li>
+                <li id="userlist" name="userlist"><a href="/UserController?sims=2">用户查询</a></li>
                 <li id="useradd" name="useradd"><a href="javascript:0">用户添加</a></li>
                 <li id="usergrant" name="usergrant"><a href="javascript:0">用户授权</a></li>
             </ul>

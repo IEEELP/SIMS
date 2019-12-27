@@ -1,5 +1,5 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>用户查询</title>
@@ -37,14 +37,15 @@
                 <th>注册时间</th>
                 <th>用户类型</th>
             </tr>
-            <c:forEach items="#" var="#" varStatus="#">
+            <c:forEach items="" var="user">
                 <tr>
                     <td>${user.username}</td>
                     <td>${user.email}</td>
                     <td>${user.time}</td>
-                    <td>${user.type}</td>
+                    <td>${user.typeStr}</td>
                 </tr>
             </c:forEach>
+
         </table>
         <a href="#" id="btn0"></a>
         <a href="#" id="btn1">首页</a>

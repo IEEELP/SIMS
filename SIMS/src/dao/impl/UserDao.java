@@ -14,8 +14,8 @@ public class UserDao implements IUserDao {
     //查询所有用户信息
     @Override
     public List<User> findAll() throws Exception{
-        QueryRunner queryRunner=new QueryRunner();
-        List<User> result = queryRunner.query("select * from user", JDBCUtils.getDataSource(), new BeanListHandler<User>(User.class));
+        QueryRunner queryRunner=new QueryRunner(JDBCUtils.getDataSource());
+        List<User> result = queryRunner.query("select * from user",new BeanListHandler<User>(User.class));
         return result;
     }
     //根据用户名删除用户信息

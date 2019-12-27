@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/UserController")
 public class UserController extends HttpServlet {
@@ -49,7 +50,7 @@ public class UserController extends HttpServlet {
                 request.setAttribute("codeError", "验证码错误");
                 request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
             }
-        } else if (sims == 1) {//用户注策
+        } else if (sims == 1) {//用户注册
             if (flag) {
                 try {
                     Boolean register = userService.register(user);
@@ -69,7 +70,13 @@ public class UserController extends HttpServlet {
                 request.getRequestDispatcher("/pages/register.jsp").forward(request, response);
             }
         } else if (sims == 2) {//用户查询
-
+            try {
+                List<User> result = userService.findAll();
+                request.setAttribute("result",result);
+                request.getRequestDispatcher("/pages/user-list.jsp").forward(request,response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else if (sims == 3) {//用户授权
 
         }
