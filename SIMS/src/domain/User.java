@@ -13,7 +13,20 @@ public class User {
     private String password;    //密码
     private Date time;          //注册时间
     private int type;           //用户类型 0普通用户 1管理员
+    private String typeStr;
     private String timeStr;
+
+    public String getTypeStr() {
+        if (type==0){
+            typeStr="普通用户";
+        }else
+            { typeStr="管理员";}
+        return typeStr;
+    }
+
+    public void setTypeStr(String typeStr) {
+        this.typeStr = typeStr;
+    }
 
     public String getUsername() {
         return username;

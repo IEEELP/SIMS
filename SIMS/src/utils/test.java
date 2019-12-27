@@ -5,11 +5,10 @@ import dao.impl.DormitoryDao;
 import dao.impl.StudentDao;
 import dao.impl.TeacherDao;
 import dao.intf.IStudentDao;
-import domain.Course;
-import domain.Dormitory;
-import domain.Student;
-import domain.Teacher;
+import domain.*;
 import org.junit.Test;
+import service.impl.UserService;
+import service.intf.IUserService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -100,6 +99,15 @@ public class test {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test() throws Exception {
+        IUserService userService=new UserService();
+        List<User> result = userService.findAll();
+        for (User i:result) {
+            System.out.println(i);
         }
     }
 }
