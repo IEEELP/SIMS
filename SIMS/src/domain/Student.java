@@ -116,4 +116,21 @@ public class Student {
     public void setSexStr(String sexStr) {
         this.sexStr = sexStr;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", birthday=" + birthday +
+                ", sno=" + sno +
+                ", domitoryid=" + domitoryid +
+                ", specialityid=" + specialityid +
+                ", domitory=" + domitory +
+                ", speciality=" + speciality +
+                ", sexStr='" + sexStr + '\'' +
+                ", birthdayStr='" + birthdayStr + '\'' +
+                '}';
+    }
 }

@@ -1,6 +1,8 @@
 package dao.impl;
 
 import dao.intf.IStudentDao;
+import domain.Domitory;
+import domain.Speciality;
 import domain.Student;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -80,6 +82,26 @@ public class StudentDao implements IStudentDao {
                                 student.getSno()};
         queryRunner.update(
                 "insert into student(name,sex,birthday,sno) values(?,?,?,?)", param);
+    }
+
+    //查询一条学生信息，并且包含该学生所对应的寝室信息和专业信息。
+    @Override
+    public Student findStudentWithAll(int id) throws SQLException {
+        QueryRunner queryRunner=new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param={id};
+        //查询学生信息
+        Student student = queryRunner.query("select * from student where id=?", new BeanHandler<Student>(Student.class), param);
+        Object[] p={student.getId()};
+        //查询跟该学生信息有关联的寝室信息
+        Domitory domitory = queryRunner.query(
+                "select * from dormitory where id=(select dormitoryid from student where id=?)", new BeanHandler<Domitory>(Domitory.class),p);
+        //查询跟该学生有关联的专业信息
+        Speciality speciality = queryRunner.query(
+                "select * from speciality where id=(select specialityid from student where id=?)", new BeanHandler<Speciality>(Speciality.class), p);
+        //将关联信息全部分装为Student对象
+        student.setDomitory(domitory);
+        student.setSpeciality(speciality);
+        return student;
     }
 
 }
