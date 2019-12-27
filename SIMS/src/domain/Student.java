@@ -13,19 +13,19 @@ public class Student {
     private int sex;                //性别 0女 1男
     private Date birthday;          //出生年月
     private int sno;                //学号
-    private int domitoryid;         //宿舍编号 外键
+    private int dormitoryid;         //宿舍编号 外键
     private int specialityid;       //专业编号 外键
-    private Domitory domitory;      //所属宿舍信息
+    private Dormitory dormitory;      //所属宿舍信息
     private Speciality speciality;  //所属专业信息
     private String sexStr;
     private String birthdayStr;
 
-    public int getDomitoryid() {
-        return domitoryid;
+    public int getDormitoryid() {
+        return dormitoryid;
     }
 
-    public void setDomitoryid(int domitoryid) {
-        this.domitoryid = domitoryid;
+    public void setDormitoryid(int domitoryid) {
+        this.dormitoryid = domitoryid;
     }
 
     public int getSpecialityid() {
@@ -88,12 +88,12 @@ public class Student {
         this.sno = sno;
     }
 
-    public Domitory getDomitory() {
-        return domitory;
+    public Dormitory getDormitory() {
+        return dormitory;
     }
 
-    public void setDomitory(Domitory domitory) {
-        this.domitory = domitory;
+    public void setDormitory(Dormitory dormitory) {
+        this.dormitory = dormitory;
     }
 
     public Speciality getSpeciality() {
@@ -125,9 +125,9 @@ public class Student {
                 ", sex=" + sex +
                 ", birthday=" + birthday +
                 ", sno=" + sno +
-                ", domitoryid=" + domitoryid +
+                ", domitoryid=" + dormitoryid +
                 ", specialityid=" + specialityid +
-                ", domitory=" + domitory +
+                ", dormitory=" + dormitory +
                 ", speciality=" + speciality +
                 ", sexStr='" + sexStr + '\'' +
                 ", birthdayStr='" + birthdayStr + '\'' +

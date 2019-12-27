@@ -48,7 +48,7 @@ public class UserService implements IUserService {
     public Boolean register(User user) throws Exception {
         User userByUsername =null;
         userByUsername = dao.findUserByUsername(user.getUsername());
-        //用户已经存在
+        //用户不存在
         if (userByUsername==null){
             int insert = dao.insert(user);
             if (insert==1){

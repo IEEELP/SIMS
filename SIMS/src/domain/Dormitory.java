@@ -2,7 +2,7 @@ package domain;
 /*
 宿舍实体类
  */
-public class Domitory {
+public class Dormitory {
     private int id;         //主键自增长
     private int dno;        //宿舍号
     private int type;       //宿舍类型 0 单人间 1四人间 2六人间 3八人间
@@ -49,19 +49,19 @@ public class Domitory {
         this.typeStr = typeStr;
     }
 
-    public Domitory(int id, int dno, int type, String typeStr) {
+    public Dormitory(int id, int dno, int type, String typeStr) {
         this.id = id;
         this.dno = dno;
         this.type = type;
         this.typeStr = typeStr;
     }
 
-    public Domitory() {
+    public Dormitory() {
     }
 
     @Override
     public String toString() {
-        return "Domitory{" +
+        return "Dormitory{" +
                 "id=" + id +
                 ", dno=" + dno +
                 ", type=" + type +
