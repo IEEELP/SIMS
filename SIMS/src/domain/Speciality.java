@@ -1,5 +1,5 @@
 package domain;
-/*
+/**
 专业实体类
  */
 public class Speciality {
