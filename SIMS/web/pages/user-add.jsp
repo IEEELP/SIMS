@@ -1,13 +1,14 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>首页</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <title>用户添加</title>
+    <link rel="stylesheet" href="../css/user-add.css">
 </head>
 <body>
 <div class="banner">
     <h2>学生信息管理系统</h2>
-    <span>${username}欢迎您使用</span>
+    <span>欢迎您使用</span>
 </div>
 <div class="side">
     <ul class="menu">
@@ -22,8 +23,15 @@
 </div>
 <div class="space"></div>
 <div class="main">
-    <div class="welcomemessage"></div>
+    <div class="addlist">
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="请输入用户名"><br/>
+            <input type="text" name="email" placeholder="请输入邮箱"><br/>
+            <input type="text" name="type" placeholder="请输入用户类型"><br/>
+            <input type="submit" name="addbtn" value="添加" id="addbtn">
+        </form>
+    </div>
 </div>
-<script src="../js/main.js"></script>
+<script src="../js/user-add.js"></script>
 </body>
 </html>
