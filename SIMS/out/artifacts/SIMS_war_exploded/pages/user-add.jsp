@@ -6,29 +6,18 @@
     <link rel="stylesheet" href="../css/user-add.css">
 </head>
 <body>
-<div class="banner">
-    <h2>学生信息管理系统</h2>
-    <span>欢迎您使用</span>
-</div>
-<div class="side">
-    <ul class="menu">
-        <li id="usermanner" class="bigslide">用户管理
-            <ul id="userul">
-                <li id="userlist" name="userlist"><a href="javascript:0">用户查询</a></li>
-                <li id="useradd" name="useradd"><a href="javascript:0">用户添加</a></li>
-                <li id="usergrant" name="usergrant"><a href="javascript:0">用户授权</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<div class="space"></div>
+<jsp:include page="headerside.jsp"></jsp:include>
 <div class="main">
+    <div class="mainbg"></div>
+    <div class="mainshadow"></div>
     <div class="addlist">
-        <form action="#" method="post">
-            <input type="text" name="username" placeholder="请输入用户名"><br/>
-            <input type="text" name="email" placeholder="请输入邮箱"><br/>
-            <input type="text" name="type" placeholder="请输入用户类型"><br/>
-            <input type="submit" name="addbtn" value="添加" id="addbtn">
+        <form action="UserController/" method="post">
+            <input type="hidden" name="sims" value="#">
+            <span>用户名:</span><input type="text" name="username" id="usernameadd" ><br/>
+            <span>邮&nbsp;&nbsp;&nbsp;箱:</span><input type="text" name="email" id="emailadd"><br/>
+            <span>用户类型:</span><input type="radio" name="type" id="admin">管理员
+            <input type="radio" name="type" id="user">普通用户<br/>
+            <input type="submit"  value="添加" id="addbtn">
         </form>
     </div>
 </div>

@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>用户查询</title>
-    <link rel="stylesheet" href="../css/user-list.css">
+    <title>宿舍查询</title>
+    <link rel="stylesheet" href="../css/dor-list.css">
 </head>
 <body>
 <jsp:include page="headerside.jsp"></jsp:include>
@@ -19,25 +19,19 @@
     <div class="searchdetail">
         <table id="table">
             <tr>
-                <th>用户名</th>
-                <th>用户邮箱</th>
-                <th>注册时间</th>
-                <th>用户类型</th>
-                <th>权限控制</th>
-                <th>删除用户</th>
+                <th>id</th>
+                <th>宿舍号</th>
+                <th>类型</th>
+                <th>删除宿舍</th>
             </tr>
-                <c:forEach items="${requestScope.result}" var="user">
+            <c:forEach items="${requestScope.result}" var="dor">
                 <tr>
-                    <td>${user.username}</td>
-                    <td>${user.email}</td>
-                    <td>${user.timeStr}</td>
-                    <td>${user.typeStr}</td>
-                    <td><a href="#" id="griant">授权</a>
-                        <a href="#">撤权</a>
-                    </td>
+                    <td>${dor.id}</td>
+                    <td>${dor.dno}</td>
+                    <td>${dor.type}</td>
                     <td><a href="#">删除</a></td>
                 </tr>
-                </c:forEach>
+            </c:forEach>
         </table>
         <a href="#" id="btn0"></a>
         <a href="#" id="btn1">首页</a>

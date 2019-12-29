@@ -2,8 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>用户添加</title>
-    <link rel="stylesheet" href="../css/user-add.css">
+    <title>课程添加</title>
+    <link rel="stylesheet" href="../css/cou-add.css">
 </head>
 <body>
 <jsp:include page="headerside.jsp"></jsp:include>
@@ -13,10 +13,9 @@
     <div class="addlist">
         <form action="UserController/" method="post">
             <input type="hidden" name="sims" value="#">
-            <span>用户名:</span><input type="text" name="username" id="usernameadd" ><br/>
-            <span>邮&nbsp;&nbsp;&nbsp;箱:</span><input type="text" name="email" id="emailadd"><br/>
-            <span>用户类型:</span><input type="radio" name="type" id="admin">管理员
-            <input type="radio" name="type" id="user">普通用户<br/>
+            <span>编      号:</span><input type="text" name="id" id="idadd" ><br/>
+            <span>名      称:</span><input type="text" name="name" id="nameadd" ><br/>
+            <span>学      分:</span><input type="text" name="cridit" id="criditadd"><br/>
             <input type="submit"  value="添加" id="addbtn">
         </form>
     </div>

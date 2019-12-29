@@ -1,18 +1,4 @@
 
-var usermanner=document.getElementById("usermanner");
-var userul=document.getElementById("userul");
-usermanner.setAttribute("flag","1");//设置标志
-usermanner.onclick=function () {//点击改变背景
-    if (usermanner.getAttribute("flag") == "1") {
-        usermanner.style.backgroundImage = "url('../img/menufolderactive.jpg')";
-        userul.style.display="block";
-        usermanner.setAttribute("flag", "0");
-    } else if (usermanner.getAttribute("flag") == "0") {
-        usermanner.style.backgroundImage = "url('../img/menufolder.jpg')";
-        userul.style.display="none";
-        usermanner.setAttribute("flag", "1");
-    }
-};
 
 ///翻页功能
 var pageSize=10;//每页数量
@@ -24,7 +10,7 @@ var page;//总页数
 var begin;
 var end;
 $(document).ready(function display() {
-    len=$("#table tr").length-1;//求总行数
+    len=$("#table tr").length;//求总行数
     page=len%pageSize==0?len/pageSize:Math.floor(len/pageSize)+1;//求页数
     curPage=1;//设置当前为第一页
     displayPage(1);//显示第一页
@@ -74,7 +60,7 @@ function displayPage(){
 
 
     begin=(curPage-1)*pageSize+1;//起始记录
-    end=begin+1*pageSize-1;//末尾记录
+    end=begin+1*pageSize;//末尾记录
 
     if (end>len) end=len;
     $("table tr").hide();//先隐藏

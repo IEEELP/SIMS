@@ -34,17 +34,12 @@
     background-color: rgba(255, 255, 255, .8);
     box-shadow: 5px 5px 5px #000;
 }
-#usernameadd,#emailadd{
+.addlist span{
     width: 250px;
     height: 30px;
     margin-top: 55px;
-}
-.addlist span{
     margin-left: 50px;
     margin-right: 25px;
-}
-#admin{
-    margin-top: 55px;
 }
 #addbtn{
     margin-top: 55px;

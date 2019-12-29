@@ -11,11 +11,14 @@ var username=document.getElementById("username");
 var usermessage=document.getElementById("usermessage");
 var password=document.getElementById("password");
 var passmessage=document.getElementById("passmessage");
+var code=document.getElementById("code");
+var codemessage=document.getElementById("codemessage");
 var loginbtn=document.getElementById("loginbtn");
 loginbtn.onclick=function () {//登录验证
   var flag=true;
   if (!checkuser()) flag=false;
   if (!checkpass()) flag=false;
+  if (!checkcode()) flag=false;
   return flag;
 };
 function checkuser() {
@@ -39,6 +42,18 @@ function checkpass() {
         return false;
     } else {
         passmessage.innerText="";
+        return true;
+    }
+}
+function checkcode() {
+    if (code.value==""){
+        codemessage.innerText="验证码不能为空";
+        codemessage.style.color="#d00";
+        codemessage.style.fontSize="14px";
+        codemessage.style.lineHeight="40px";
+        return false;
+    } else {
+        codemessage.innerText="";
         return true;
     }
 }
