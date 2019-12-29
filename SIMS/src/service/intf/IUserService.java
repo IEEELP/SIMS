@@ -19,11 +19,15 @@ public interface IUserService {
      * @return
      * @param user
      */
-    Boolean login(User user) throws Exception;
+    User login(User user) throws Exception;
 
     /**用户注册
      *
      * @param user
      */
     Boolean register(User user) throws Exception;
+
+    //添加一条用户信息
+    void add(User user)throws Exception;
+
 }

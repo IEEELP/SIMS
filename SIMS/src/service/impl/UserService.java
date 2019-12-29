@@ -8,7 +8,7 @@ import service.intf.IUserService;
 import java.util.List;
 
 public class UserService implements IUserService {
-    IUserDao dao=new UserDao();
+    IUserDao userDao=new UserDao();
 
     /**查询所有用户信息
      *
@@ -17,7 +17,7 @@ public class UserService implements IUserService {
      */
     @Override
     public List<User> findAll() throws Exception {
-        List<User> result = dao.findAll();
+        List<User> result = userDao.findAll();
         return result;
     }
 
@@ -27,16 +27,17 @@ public class UserService implements IUserService {
      * @return
      */
     @Override
-    public Boolean login(User user) throws Exception {
-        User userByUsername = dao.findUserByUsername(user.getUsername());
-        String password = userByUsername.getPassword();
-        if (password==null||password==""){
-            return false;
-        }
-        if (password.equals(user.getPassword())){
-            return true;
-        }else{
-            return false;
+    public User login(User user) throws Exception {
+        User result = userDao.findUserByUsername(user.getUsername());
+        if (result!=null){
+            String password = result.getPassword();
+            if (user.getPassword().equals(password)){
+                return result;
+            }else {
+                return null;
+            }
+        }else {
+            return null;
         }
     }
 
@@ -47,15 +48,20 @@ public class UserService implements IUserService {
     @Override
     public Boolean register(User user) throws Exception {
         User userByUsername =null;
-        userByUsername = dao.findUserByUsername(user.getUsername());
+        userByUsername = userDao.findUserByUsername(user.getUsername());
         //用户不存在
         if (userByUsername==null){
-            int insert = dao.insert(user);
+            int insert = userDao.insert(user);
             if (insert==1){
                 return true;
             }
             return false;
         }
         return false;
+    }
+    //添加一条用户信息
+    @Override
+    public void add(User user) throws Exception {
+         userDao.insert(user);
     }
 }

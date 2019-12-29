@@ -29,26 +29,30 @@ public class UserController extends HttpServlet {
         user.setEmail(email);
         HttpSession session = request.getSession();
         String drawCode = session.getAttribute("drawCode").toString();
-        Boolean flag = drawCode.equalsIgnoreCase(code);
+        Boolean flag = drawCode.equalsIgnoreCase(code);//验证码
         //if-start
         if (sims == 0) { //用户登录
             if (flag){
                 try {
-                    Boolean  login = userService.login(user);
-                    if (login) {
+                    User login = userService.login(user);
+                    if (login!=null) {
                         //登陆成功，重定向
+                        session.setAttribute("type",login.getType());
+                        session.setAttribute("username",login.getUsername());
                         response.sendRedirect("/pages/main.jsp");
+
                     } else {
-                        //登录失败,跳转到登陆页面
-                        request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
+                        //登录失败,跳转到失败页面
+                        request.setAttribute("massage", "登录失败，请检查用户名密码是否输入正确");
+                        request.getRequestDispatcher("/pages/fail.jsp").forward(request, response);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }else {
                 //验证码错误
-                request.setAttribute("codeError", "验证码错误");
-                request.getRequestDispatcher("/pages/login.jsp").forward(request, response);
+                request.setAttribute("massage", "验证码错误");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request, response);
             }
         } else if (sims == 1) {//用户注册
             if (flag) {
@@ -57,17 +61,16 @@ public class UserController extends HttpServlet {
                     if (register) {
                         response.sendRedirect("/pages/login.jsp");
                     } else {
-                        response.setContentType("text/html;charset=utf-8");
-                        request.setAttribute("registerFail", "注册失败");
-                        request.getRequestDispatcher("/pages/register.jsp").forward(request, response);
+                        request.setAttribute("massage", "注册失败");
+                        request.getRequestDispatcher("/pages/fail.jsp").forward(request, response);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }else {
                 //验证码错误
-                request.setAttribute("codeError", "验证码错误");
-                request.getRequestDispatcher("/pages/register.jsp").forward(request, response);
+                request.setAttribute("massage", "验证码错误");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request, response);
             }
         } else if (sims == 2) {//用户查询
             try {
@@ -79,6 +82,18 @@ public class UserController extends HttpServlet {
             }
         } else if (sims == 3) {//用户授权
 
+        }else if (sims==4){//用户添加
+                int type= (int) session.getAttribute("type");
+                if (type==1){//如果是管理员
+                    try {
+                        user.setType(Integer.parseInt(request.getParameter("type")));
+                        user.setPassword("123456");
+                        userService.add(user);
+                        response.sendRedirect("/UserController?sims=2");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
         }
         //if-end
     }

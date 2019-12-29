@@ -1,10 +1,8 @@
 package utils;
 
-import dao.impl.CourseDao;
-import dao.impl.DormitoryDao;
-import dao.impl.StudentDao;
-import dao.impl.TeacherDao;
+import dao.impl.*;
 import dao.intf.IStudentDao;
+import dao.intf.IUserDao;
 import domain.*;
 import org.junit.Test;
 import service.impl.UserService;
@@ -104,10 +102,8 @@ public class test {
 
     @Test
     public void test() throws Exception {
-        IUserService userService=new UserService();
-        List<User> result = userService.findAll();
-        for (User i:result) {
-            System.out.println(i);
-        }
+        IUserDao userDao=new UserDao();
+        User kk = userDao.findUserByUsername("kk");
+        System.out.println(kk);
     }
 }
