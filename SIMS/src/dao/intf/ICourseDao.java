@@ -41,4 +41,12 @@ public interface ICourseDao {
      * @throws SQLException
      */
     void insert(Course course) throws SQLException;
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    List<Course> findLike(String keyword) throws Exception;
 }

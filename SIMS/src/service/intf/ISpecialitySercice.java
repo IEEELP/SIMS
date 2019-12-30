@@ -1,6 +1,5 @@
 package service.intf;
 
-import domain.Course;
 import domain.Speciality;
 
 import java.util.List;
@@ -12,20 +11,13 @@ public interface ISpecialitySercice {
      * @param name
      * @throws Exception
      */
-    Speciality findSpecilityByName(String name) throws Exception;
+    Speciality findSpecialityByName(String name) throws Exception;
     /**
      * 获取所有课程信息
      * @return
      * @throws Exception
      */
     List<Speciality> findAll() throws Exception;
-
-    /**
-     * 根据课程关键字搜索课程信息
-     * @return
-     * @throws Exception
-     */
-    Speciality findSpecialityByName(String keyWord) throws Exception;
 
     /**
      * 添加课程信息

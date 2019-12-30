@@ -27,7 +27,7 @@ public interface IDormitoryDao {
     /**
      * 根据宿舍ID删除宿舍信息
      * @param id
-     * @param id
+     * @throws SQLException
      */
     void deleteById(int id) throws SQLException;
 
@@ -45,4 +45,12 @@ public interface IDormitoryDao {
      * @throws SQLException
      */
     void inset(Dormitory dormitory) throws SQLException;
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    List<Dormitory> findLike(String keyword) throws Exception;
 }

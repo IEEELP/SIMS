@@ -11,8 +11,9 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="search">
-        <form action="#" method="post">
+        <form action="/UserController" method="post">
             <input type="text" name="keyword" placeholder="请输入关键字">
+            <input type="hidden" name="sims" value="5"/>
             <input type="submit" name="submit" value="搜索" id="searchbtn">
         </form>
     </div>

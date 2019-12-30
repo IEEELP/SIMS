@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.intf.IDormitoryDao;
+import domain.Course;
 import domain.Dormitory;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -45,5 +46,13 @@ public class DormitoryDao implements IDormitoryDao {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {dormitory.getDno(),dormitory.getType()};
         queryRunner.update("insert into dormitory(dno,type) values(?,?)",param);
+    }
+
+    @Override
+    public List<Dormitory> findLike(String keyword) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<Dormitory> result = queryRunner.query("select * from dormitory where dno like ?", new BeanListHandler<Dormitory>(Dormitory.class), param);
+        return result;
     }
 }

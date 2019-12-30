@@ -18,4 +18,6 @@ public interface IUserDao {
     User  findUserByUsername(String username) throws Exception;
     //插入一条用户信息
     int insert(User user)throws Exception;
+    //模糊查询
+    List<User> findLike(String keyword) throws Exception;
 }

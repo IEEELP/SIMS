@@ -52,4 +52,12 @@ public interface ISpecialityDao {
      * @throws SQLException
      */
     void insert(Speciality speciality) throws SQLException;
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    List<Speciality> findLike(String keyword) throws Exception;
 }

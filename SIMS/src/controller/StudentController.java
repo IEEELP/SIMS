@@ -1,7 +1,5 @@
 package controller;
 
-import dao.impl.DormitoryDao;
-import dao.intf.IDormitoryDao;
 import domain.Dormitory;
 import domain.Speciality;
 import domain.Student;
@@ -53,33 +51,46 @@ public class StudentController extends HttpServlet {
             String name = request.getParameter("name");
             String sex = request.getParameter("sex");
             String birth = request.getParameter("birth");
-            String spe = request.getParameter("spe");
-            String dor = request.getParameter("dor");
+            String specialityid = request.getParameter("specialityid");
+            String dormitoryid = request.getParameter("dormitoryid");
             Student student = new Student();
             student.setSno(Integer.parseInt(sno));
             student.setName(name);
             student.setSex(Integer.parseInt(sex));
             student.setBirthday(new StringDateTransformUtils().StringToDate(birth));
+            student.setSpecialityid(Integer.parseInt(specialityid));
+            student.setDormitoryid(Integer.parseInt(dormitoryid));
             try {
-                if (dor!=""&&dor!=null) {
-                    //根据宿舍dno查询宿舍信息
-                    Dormitory dormitory = dormitoryService.findByDno(Integer.parseInt(dor));
-                    if (dormitory!=null){
-                        student.setDormitoryid(dormitory.getId());
-                    }
-                }
-                //根据专业名称查询专业信息
-                Speciality specility = specialitySercice.findSpecilityByName(spe);
-                student.setSpecialityid(specility.getId());
                 studentService.addStudent(student);
+                request.getRequestDispatcher("/StudentController?sims=0").forward(request,response);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else if (sims==3){ //删除一条教师信息
+        }else if (sims==3){ //删除一条学生信息
             String studentid = request.getParameter("studentid");
             try {
                 studentService.deleteById(Integer.parseInt(studentid));
                 response.sendRedirect("/StudentController?sims=0");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==4){ //详情
+            String studentid = request.getParameter("studentid");
+            Student result = null;
+            try {
+                result = studentService.findDetail(Integer.parseInt(studentid));
+                request.setAttribute("student",result);
+                request.getRequestDispatcher("/pages/stu-detail.jsp").forward(request,response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==5){ //查询宿舍和专业信息
+            try {
+                List<Speciality> specialities = specialitySercice.findAll();
+                List<Dormitory> dormitories = dormitoryService.findAll();
+                request.setAttribute("spe",specialities);
+                request.setAttribute("dor",dormitories);
+                request.getRequestDispatcher("/pages/stu-add.jsp").forward(request,response);
             } catch (Exception e) {
                 e.printStackTrace();
             }

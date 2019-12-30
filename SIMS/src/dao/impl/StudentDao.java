@@ -124,4 +124,24 @@ public class StudentDao implements IStudentDao {
         List<Student> result = queryRunner.query("select * from student where name like ?", new BeanListHandler<Student>(Student.class), param);
         return result;
     }
+
+    /**
+     * 查询一条学生信息，附带关联的宿舍信息和专业信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Student findDetail(int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {id};
+        Student result = queryRunner.query("select * from student where id=?", new BeanHandler<Student>(Student.class), param);
+        Object[] p = {result.getDormitoryid()};
+        Dormitory dormitory = queryRunner.query("select * from dormitory where id =?", new BeanHandler<Dormitory>(Dormitory.class), p);
+        Object[] p2 = {result.getSpecialityid()};
+        Speciality speciality = queryRunner.query("select * from speciality where id=?", new BeanHandler<Speciality>(Speciality.class), p2);
+        result.setDormitory(dormitory);
+        result.setSpeciality(speciality);
+        return result;
+    }
 }

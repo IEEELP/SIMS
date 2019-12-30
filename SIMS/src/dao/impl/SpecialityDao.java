@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.intf.ISpecialityDao;
+import domain.Course;
 import domain.Speciality;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -53,5 +54,19 @@ public class SpecialityDao implements ISpecialityDao {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {speciality.getName(),speciality.getFaculty(),speciality.getType()};
         queryRunner.update("insert into speciality(name,faculty,type) values(?,?,?)",param);
+    }
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Speciality> findLike(String keyword) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<Speciality> result = queryRunner.query("select * from speciality where name like ?", new BeanListHandler<Speciality>(Speciality.class), param);
+        return result;
     }
 }

@@ -21,13 +21,6 @@ public interface IDormitoryService {
     List<Dormitory> findAll() throws Exception;
 
     /**
-     * 根据宿舍关键字搜索宿舍信息
-     * @return
-     * @throws Exception
-     */
-    Dormitory findDormitoryByName(String keyWord) throws Exception;
-
-    /**
      * 添加宿舍信息
      * @param dormitory
      * @throws Exception
@@ -43,6 +36,7 @@ public interface IDormitoryService {
 
     /**
      * 模糊查询
+     * @param keyword
      * @return
      * @throws Exception
      */

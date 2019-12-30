@@ -64,4 +64,16 @@ public class UserService implements IUserService {
     public void add(User user) throws Exception {
          userDao.insert(user);
     }
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<User> findLike(String keyword) throws Exception {
+        List<User> result = userDao.findLike("%" + keyword + "%");
+        return result;
+    }
 }

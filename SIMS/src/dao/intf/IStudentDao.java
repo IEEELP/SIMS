@@ -20,4 +20,6 @@ public interface IStudentDao {
         Student findStudentWithAll(int id) throws SQLException;
         //模糊查询
         List<Student> findLike(String keyword) throws Exception;
+        //查询一条学生信息，附带关联的宿舍信息和专业信息
+        Student findDetail(int id) throws Exception;
 }

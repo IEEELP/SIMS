@@ -38,7 +38,7 @@ public class StudentService implements IStudentService {
      */
     @Override
     public void addStudent(Student student) throws Exception {
-
+        studentDao.insert(student);
     }
 
     /**
@@ -54,6 +54,18 @@ public class StudentService implements IStudentService {
     @Override
     public List<Student> findLike(String keyword) throws Exception{
         List<Student> result = studentDao.findLike("%"+keyword+"%");
+        return result;
+    }
+
+    /**
+     * 详情
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Student findDetail(int id) throws Exception {
+        Student result = studentDao.findDetail(id);
         return result;
     }
 }

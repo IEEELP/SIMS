@@ -17,33 +17,30 @@ public class SpecialityService implements ISpecialitySercice {
      * @throws Exception
      */
     @Override
-    public Speciality findSpecilityByName(String name) throws Exception {
+    public Speciality findSpecialityByName(String name) throws Exception {
         Speciality result = specialityDao.findByName(name);
         return result;
     }
 
     @Override
     public List<Speciality> findAll() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Speciality findSpecialityByName(String keyWord) throws Exception {
-        return null;
+        List<Speciality> result = specialityDao.findAll();
+        return result;
     }
 
     @Override
     public void addSpeciality(Speciality speciality) throws Exception {
-
+        specialityDao.insert(speciality);
     }
 
     @Override
     public void deleteById(int id) throws Exception {
-
+        specialityDao.deleteById(id);
     }
 
     @Override
     public List<Speciality> findLike(String keyword) throws Exception {
-        return null;
+        List<Speciality> result = specialityDao.findLike("%" + keyword + "%");
+        return result;
     }
 }

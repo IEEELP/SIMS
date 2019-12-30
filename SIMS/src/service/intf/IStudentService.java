@@ -39,4 +39,12 @@ public interface IStudentService {
      * @throws Exception
      */
     List<Student> findLike(String keyword) throws Exception;
+
+    /**
+     * 详情
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Student findDetail(int id) throws Exception;
 }

@@ -13,13 +13,6 @@ public interface ICourseService {
     List<Course> findAll() throws Exception;
 
     /**
-     * 根据课程关键字搜索课程信息
-     * @return
-     * @throws Exception
-     */
-    Course findCourseByName(String keyWord) throws Exception;
-
-    /**
      * 添加课程信息
      * @param course
      * @throws Exception

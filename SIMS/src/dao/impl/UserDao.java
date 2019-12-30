@@ -52,4 +52,20 @@ public class UserDao implements IUserDao {
         connection.close();
         return result;
     }
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<User> findLike(String keyword) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<User> result = queryRunner.query("select * from user where username like ?", new BeanListHandler<User>(User.class), param);
+        return result;
+    }
+
+
 }

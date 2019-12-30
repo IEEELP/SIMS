@@ -46,4 +46,18 @@ public class CourseDao implements ICourseDao {
         Object[] param = {course.getId(),course.getName(),course.getCridit(),course.getCheck()};
         queryRunner.update("insert into course values(?,?,?,?)",param);
     }
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Course> findLike(String keyword) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<Course> result = queryRunner.query("select * from course where name like ?", new BeanListHandler<Course>(Course.class), param);
+        return result;
+    }
 }

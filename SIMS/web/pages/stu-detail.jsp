@@ -22,11 +22,11 @@
             </tr>
             <tr>
                 <th>性别</th>
-                <td>${student.sex}</td>
+                <td>${student.sexStr}</td>
             </tr>
             <tr>
                 <th>生日</th>
-                <td>${student.birthday}</td>
+                <td>${student.birthdayStr}</td>
             </tr>
             <tr>
                 <th>专业名</th>
@@ -34,19 +34,19 @@
             </tr>
             <tr>
                 <th>培养类型</th>
-                <td></td>
+                <td>${student.speciality.typeStr}</td>
             </tr>
             <tr>
                 <th>院系</th>
-                <td></td>
+                <td>${student.speciality.faculty}</td>
             </tr>
             <tr>
-                <th>宿舍</th>
+                <th>宿舍号</th>
                 <td>${student.dormitory.dno}</td>
             </tr>
             <tr>
                 <th>宿舍类型</th>
-                <td></td>
+                <td>${student.dormitory.typeStr}</td>
             </tr>
         </table>
     </div>

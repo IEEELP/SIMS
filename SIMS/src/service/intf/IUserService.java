@@ -30,4 +30,12 @@ public interface IUserService {
     //添加一条用户信息
     void add(User user)throws Exception;
 
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    List<User> findLike(String keyword) throws Exception;
+
 }

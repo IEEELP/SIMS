@@ -93,6 +93,15 @@ public class UserController extends HttpServlet {
                         e.printStackTrace();
                     }
                 }
+        }else if (sims == 5){ //模糊查询
+            String keyword = request.getParameter("keyword");
+            try {
+                List<User> result = userService.findLike(keyword);
+                request.setAttribute("result",result);
+                request.getRequestDispatcher("/pages/user-list.jsp").forward(request,response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         //if-end
     }

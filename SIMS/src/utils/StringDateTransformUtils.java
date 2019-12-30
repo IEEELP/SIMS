@@ -10,7 +10,7 @@ public class StringDateTransformUtils {
     //
     public Date StringToDate(String s){
         try {
-            DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
             Date result = dateFormat.parse(s);
             return result;
         } catch (ParseException e) {
@@ -20,7 +20,7 @@ public class StringDateTransformUtils {
     }
 
     public String DateToString(Date date){
-        DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd ");
         String result = dateFormat.format(date);
         return result;
     }

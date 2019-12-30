@@ -33,11 +33,11 @@
                 <tr>
                     <td>${student.sno}</td>
                     <td>${student.name}</td>
-                    <td>${student.sex}</td>
+                    <td>${student.sexStr}</td>
                     <td>${student.birthday}</td>
                     <td>${student.speciality.name}</td>
                     <td>${student.dormitory.dno}</td>
-                    <td><a href="#" id="detail">详情</a></td>
+                    <td><a href="${pageContext.request.contextPath}/StudentController?sims=4&studentid=${student.id}" id="detail">详情</a></td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=3&studentid=${student.id}">删除</a></td>
                 </tr>
             </c:forEach>

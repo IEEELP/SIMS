@@ -24,26 +24,29 @@ public class DormitoryService implements IDormitoryService {
 
     @Override
     public List<Dormitory> findAll() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Dormitory findDormitoryByName(String keyWord) throws Exception {
-        return null;
+        List<Dormitory> result = dormitoryDao.findAll();
+        return result;
     }
 
     @Override
     public void addDormitory(Dormitory dormitory) throws Exception {
-
+        dormitoryDao.inset(dormitory);
     }
 
     @Override
     public void deleteById(int id) throws Exception {
-
+        dormitoryDao.deleteById(id);
     }
 
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<Dormitory> findLike(String keyword) throws Exception {
-        return null;
+        List<Dormitory> result = dormitoryDao.findLike("%" + keyword + "%");
+        return result;
     }
 }
