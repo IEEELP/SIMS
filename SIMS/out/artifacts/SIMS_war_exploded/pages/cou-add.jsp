@@ -13,9 +13,10 @@
     <div class="addlist">
         <form action="UserController/" method="post">
             <input type="hidden" name="sims" value="#">
-            <span>编      号:</span><input type="text" name="id" id="idadd" ><br/>
             <span>名      称:</span><input type="text" name="name" id="nameadd" ><br/>
             <span>学      分:</span><input type="text" name="cridit" id="criditadd"><br/>
+            <span>考察方式  :</span><input type="radio" name="type" value="0" class="checkinput">考查
+                                     <input type="radio" name="type" value="1" class="checkinput">考试<br/>
             <input type="submit"  value="添加" id="addbtn">
         </form>
     </div>

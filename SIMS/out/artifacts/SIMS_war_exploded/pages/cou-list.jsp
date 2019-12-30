@@ -19,16 +19,16 @@
     <div class="searchdetail">
         <table id="table">
             <tr>
-                <th>id</th>
                 <th>名称</th>
                 <th>学分</th>
+                <th>考查方式</th>
                 <th>删除课程</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="course">
                 <tr>
-                    <td>${course.id}</td>
                     <td>${course.name}</td>
                     <td>${course.cridit}</td>
+                    <td>${course.check}</td>
                     <td><a href="#">删除</a></td>
                 </tr>
             </c:forEach>

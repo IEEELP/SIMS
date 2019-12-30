@@ -1,4 +1,7 @@
 package domain;
+
+import java.util.List;
+
 /*
 宿舍实体类
  */
@@ -7,6 +10,15 @@ public class Dormitory {
     private int dno;        //宿舍号
     private int type;       //宿舍类型 0 单人间 1四人间 2六人间 3八人间
     private String typeStr;
+    private List<Dormitory> dormitoryList;
+
+    public List<Dormitory> getDormitoryList() {
+        return dormitoryList;
+    }
+
+    public void setDormitoryList(List<Dormitory> dormitoryList) {
+        this.dormitoryList = dormitoryList;
+    }
 
     public int getId() {
         return id;

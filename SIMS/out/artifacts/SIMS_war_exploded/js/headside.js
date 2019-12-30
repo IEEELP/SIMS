@@ -1,4 +1,4 @@
-//变量统一定义
+﻿//变量统一定义
 var usermanner=document.getElementById("usermanner");
 var userul=document.getElementById("userul");
 var userli=userul.getElementsByTagName("li");

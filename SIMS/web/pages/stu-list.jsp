@@ -26,6 +26,7 @@
                 <th>生日</th>
                 <th>专业</th>
                 <th>宿舍</th>
+                <th>详情</th>
                 <th>删除用户</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="student">
@@ -36,6 +37,7 @@
                     <td>${student.birthday}</td>
                     <td>${student.speciality.name}</td>
                     <td>${student.dormitory.dno}</td>
+                    <td><a href="#" id="detail">详情</a></td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=3&studentid=${student.id}">删除</a></td>
                 </tr>
             </c:forEach>

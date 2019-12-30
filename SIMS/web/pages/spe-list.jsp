@@ -22,6 +22,7 @@
                 <th>名称</th>
                 <th>院系</th>
                 <th>类型</th>
+                <th>详情</th>
                 <th>删除专业</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="spe">
@@ -29,6 +30,7 @@
                     <td>${spe.name}</td>
                     <td>${spe.faculty}</td>
                     <td>${spe.type}</td>
+                    <td><a href="#" id="detail">详情</a></td>
                     <td><a href="#">删除</a></td>
                 </tr>
             </c:forEach>

@@ -19,16 +19,16 @@
     <div class="searchdetail">
         <table id="table">
             <tr>
-                <th>id</th>
                 <th>宿舍号</th>
                 <th>类型</th>
+                <th>详情</th>
                 <th>删除宿舍</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="dor">
                 <tr>
-                    <td>${dor.id}</td>
                     <td>${dor.dno}</td>
                     <td>${dor.type}</td>
+                    <td><a href="#" id="detail">详情</a></td>
                     <td><a href="#">删除</a></td>
                 </tr>
             </c:forEach>

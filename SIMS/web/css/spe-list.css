@@ -60,9 +60,9 @@ table a{
     color: #ff0000;
     border: 1px solid #ff0000;
 }
-table #griant{
-    color: green;
-    border: 1px solid green;
+table #detail{
+    color: blue;
+    border: 1px solid blue;
 }
 table th{
     background-image: linear-gradient(to top, #ccc,#fff);

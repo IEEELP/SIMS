@@ -15,7 +15,8 @@
             <input type="hidden" name="sims" value="#">
             <span>名      称:</span><input type="text" name="name" id="nameadd" ><br/>
             <span>院      系:</span><input type="text" name="faculty" id="facultyadd" ><br/>
-            <span>类      型:</span><input type="text" name="type" id="typeadd"><br/>
+            <span>类      型:</span><input type="radio" name="type" value="0" class="typeinput">普通
+                                     <input type="radio" name="type" value="1" class="typeinput">重点<br/>
             <input type="submit"  value="添加" id="addbtn">
         </form>
     </div>

@@ -1,4 +1,7 @@
 package domain;
+
+import java.util.List;
+
 /**
 专业实体类
  */
@@ -8,6 +11,7 @@ public class Speciality {
     private String faculty;     //所属院系
     private int type;           //培养类型 0普通 1重点
     private String typeStr;
+    private List<Student> studentList;
 
     public int getId() {
         return id;
@@ -48,6 +52,14 @@ public class Speciality {
             typeStr="重点";
         }
         return typeStr;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
     }
 
     public void setTypeStr(String typeStr) {
