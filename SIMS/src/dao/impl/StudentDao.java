@@ -11,6 +11,7 @@ import utils.JDBCUtils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDao implements IStudentDao {
@@ -22,8 +23,14 @@ public class StudentDao implements IStudentDao {
     @Override
     public List<Student> findAll() throws SQLException {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-        List<Student> result = queryRunner.query("select * from student",
+        List<Student> results = queryRunner.query("select * from student",
                            new BeanListHandler<Student>(Student.class));
+        List<Student> result = new ArrayList<>();
+        for (Student student : results){
+            int id = student.getId();
+            Student studentWithAll = findStudentWithAll(id);
+            result.add(studentWithAll);
+        }
         return result;
     }
 
@@ -44,15 +51,15 @@ public class StudentDao implements IStudentDao {
     }
 
     /**
-     * 根据学号删除学生信息
-     * @param sno
+     * 根据学生ID删除学生信息
+     * @param id
      * @throws SQLException
      */
     @Override
-    public void deleteById(int sno) throws SQLException {
+    public void deleteById(int id) throws SQLException {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-        Object[] param = {sno};
-        queryRunner.update("delete from student where sno =?", param);
+        Object[] param = {id};
+        queryRunner.update("delete from student where id =?", param);
     }
 
     /**
@@ -78,10 +85,10 @@ public class StudentDao implements IStudentDao {
     @Override
     public void insert(Student student) throws SQLException {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-        Object[] param = {student.getName(),student.getSex(),student.getBirthday(),
-                                student.getSno()};
+        Object[] param = {student.getName(),student.getSex(),student.getBirthday(),student.getSpecialityid(),
+                student.getDormitoryid(),student.getSno()};
         queryRunner.update(
-                "insert into student(name,sex,birthday,sno) values(?,?,?,?)", param);
+                "insert into student(name,sex,birthday,specialityid,dormitoryid,sno) values(?,?,?,?,?,?)", param);
     }
 
     //查询一条学生信息，并且包含该学生所对应的寝室信息和专业信息。
@@ -104,4 +111,17 @@ public class StudentDao implements IStudentDao {
         return student;
     }
 
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findLike(String keyword) throws Exception{
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<Student> result = queryRunner.query("select * from student where name like ?", new BeanListHandler<Student>(Student.class), param);
+        return result;
+    }
 }

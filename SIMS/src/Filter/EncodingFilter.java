@@ -10,9 +10,11 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class EncodingFilter implements javax.servlet.Filter {
+    @Override
     public void init(FilterConfig config) throws ServletException {
     }
 
+    @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request=(HttpServletRequest) req;
         HttpServletResponse response=(HttpServletResponse) resp;
@@ -21,7 +23,7 @@ public class EncodingFilter implements javax.servlet.Filter {
         response.setContentType("text/html;charset=UTF-8");
         chain.doFilter(req, resp);
     }
-
+@Override
     public void destroy() {
     }
 

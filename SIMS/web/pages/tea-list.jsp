@@ -11,7 +11,7 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="search">
-        <form action="#" method="post">
+        <form action="/TeacherController?sims=1" method="post">
             <input type="text" name="keyword" placeholder="请输入关键字">
             <input type="submit" name="submit" value="搜索" id="searchbtn">
         </form>
@@ -26,14 +26,14 @@
                 <th>专业</th>
                 <th>删除用户</th>
             </tr>
-            <c:forEach items="${requestScope.result}" var="student">
+            <c:forEach items="${requestScope.result}" var="teacher">
                 <tr>
-                    <td>${teacer.tno}</td>
+                    <td>${teacher.tno}</td>
                     <td>${teacher.name}</td>
-                    <td>${teacher.sex}</td>
-                    <td>${teacher.birthday}</td>
-                    <td>${teacher.academic}</td>
-                    <td><a href="#">删除</a></td>
+                    <td>${teacher.sexStr}</td>
+                    <td>${teacher.birthdayStr}</td>
+                    <td>${teacher.academicStr}</td>
+                    <td><a href="${pageContext.request.contextPath}/TeacherController?sims=3&teacherid=${teacher.id}">删除</a></td>
                 </tr>
             </c:forEach>
         </table>

@@ -31,10 +31,10 @@ public interface ITeacherDao {
 
     /**
      * 根据教师编号删除教师信息
-     * @param tno
+     * @param id
      * @throws Exception
      */
-    void deleteByTeacherTno(int tno)throws Exception;
+    void deleteByTeacherId(int id)throws Exception;
 
     /**
      * 根据教师ID修改教师信息
@@ -50,4 +50,12 @@ public interface ITeacherDao {
      * @throws SQLException
      */
     void insert(Teacher teacher) throws SQLException;
+
+    /**
+     * 模糊查询
+     * @param keyword
+     * @return
+     * @throws Exception
+     */
+    List<Teacher> findLike(String keyword) throws Exception;
 }

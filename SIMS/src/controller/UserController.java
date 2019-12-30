@@ -40,7 +40,6 @@ public class UserController extends HttpServlet {
                         session.setAttribute("type",login.getType());
                         session.setAttribute("username",login.getUsername());
                         response.sendRedirect("/pages/main.jsp");
-
                     } else {
                         //登录失败,跳转到失败页面
                         request.setAttribute("massage", "登录失败，请检查用户名密码是否输入正确");

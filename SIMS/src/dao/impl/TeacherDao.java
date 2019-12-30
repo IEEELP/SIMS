@@ -34,10 +34,10 @@ public class TeacherDao implements ITeacherDao {
     }
 
     @Override
-    public void deleteByTeacherTno(int tno) throws Exception {
+    public void deleteByTeacherId(int id) throws Exception {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-        Object[] param = {tno};
-        queryRunner.update("delete from teacher where tno=?",param);
+        Object[] param = {id};
+        queryRunner.update("delete from teacher where id=?",param);
     }
 
     @Override
@@ -52,5 +52,13 @@ public class TeacherDao implements ITeacherDao {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {teacher.getName(),teacher.getTno(),teacher.getAcademic(),teacher.getBirthday(),teacher.getSex(),teacher.getDescription()};
         queryRunner.update("insert into teacher(name,tno,academic,birthday,sex,description) values(?,?,?,?,?,?)",param);
+    }
+
+    @Override
+    public List<Teacher> findLike(String keyword) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {keyword};
+        List<Teacher> result = queryRunner.query("select * from teacher where name like ?", new BeanListHandler<Teacher>(Teacher.class), param);
+        return result;
     }
 }

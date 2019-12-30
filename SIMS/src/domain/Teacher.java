@@ -10,7 +10,7 @@ public class Teacher {
     private int id;                 //主键id
     private String name;            //教师姓名
     private int tno;                //教师编号
-    private int academic;           //教师学历
+    private int academic;           //教师学历 0本科 1硕士
     private Date birthday;          //出生日期
     private int sex;                //性别 0女 1男
     private String description;     //描述

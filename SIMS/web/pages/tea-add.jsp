@@ -11,8 +11,8 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="addlist">
-        <form action="UserController/" method="post">
-            <input type="hidden" name="sims" value="#">
+        <form action="/UserController" method="post">
+            <input type="hidden" name="sims" value="2">
             <span>工      号:</span><input type="text" name="sno" id="snoadd" ><br/>
             <span>姓      名:</span><input type="text" name="name" id="nameadd" ><br/>
             <span>性      别:</span><input type="text" name="sex" id="sexadd"><br/>

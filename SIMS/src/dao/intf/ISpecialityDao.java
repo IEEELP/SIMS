@@ -24,6 +24,14 @@ public interface ISpecialityDao {
     Speciality findById(int id) throws SQLException;
 
     /**
+     * 根据专业名称查询专业信息
+     * @param name
+     * @return
+     * @throws SQLException
+     */
+    Speciality findByName(String name) throws SQLException;
+
+    /**
      * 根据专业 ID删除专业
      * @param id
      * @throws SQLException

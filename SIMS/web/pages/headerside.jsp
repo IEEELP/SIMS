@@ -20,31 +20,31 @@
         </li>
         <li id="stumanner" class="bigslide">学生管理
             <ul id="stuul">
-                <li id="stulist" name="stulist"><a href="${pageContext.request.contextPath}/pages/stu-list.jsp"></a></li>
+                <li id="stulist" name="stulist"><a href="${pageContext.request.contextPath}/StudentController?sims=0"></a></li>
                 <li id="stuadd" name="stuadd"><a href="${pageContext.request.contextPath}/pages/stu-add.jsp"></a></li>
             </ul>
         </li>
         <li id="teamanner" class="bigslide">教师管理
             <ul id="teaul">
-                <li id="tealist" name="tealist"><a href="${pageContext.request.contextPath}/pages/tea-list.jsp"></a></li>
+                <li id="tealist" name="tealist"><a href="${pageContext.request.contextPath}/TeacherController?sims=0"></a></li>
                 <li id="teaadd" name="teaadd"><a href="${pageContext.request.contextPath}/pages/tea-add.jsp"></a></li>
             </ul>
         </li>
         <li id="spemanner" class="bigslide">专业管理
             <ul id="speul">
-                <li id="spelist" name="spelist"><a href="${pageContext.request.contextPath}/pages/spe-list.jsp"></a></li>
+                <li id="spelist" name="spelist"><a href="${pageContext.request.contextPath}/SpecialityController?sims=0"></a></li>
                 <li id="speadd" name="speadd"><a href="${pageContext.request.contextPath}/pages/spe-add.jsp"></a></li>
             </ul>
         </li>
         <li id="coumanner" class="bigslide">课程管理
             <ul id="couul">
-                <li id="coulist" name="coulist"><a href="${pageContext.request.contextPath}/pages/cou-list.jsp"></a></li>
+                <li id="coulist" name="coulist"><a href="${pageContext.request.contextPath}/CourseController?sims=0"></a></li>
                 <li id="couadd" name="couadd"><a href="${pageContext.request.contextPath}/pages/cou-add.jsp"></a></li>
             </ul>
         </li>
         <li id="dormanner" class="bigslide">宿舍管理
             <ul id="dorul">
-                <li id="dorlist" name="dorlist"><a href="${pageContext.request.contextPath}/pages/dor-list.jsp"></a></li>
+                <li id="dorlist" name="dorlist"><a href="${pageContext.request.contextPath}/DormitoryController"></a></li>
                 <li id="doradd" name="doradd"><a href="${pageContext.request.contextPath}/pages/dor-add.jsp"></a></li>
             </ul>
         </li>

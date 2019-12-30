@@ -27,6 +27,14 @@ public class SpecialityDao implements ISpecialityDao {
     }
 
     @Override
+    public Speciality findByName(String name) throws SQLException {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {name};
+        Speciality result = queryRunner.query("select * from speciality where name =?", new BeanHandler<>(Speciality.class), param);
+        return result;
+    }
+
+    @Override
     public void deleteById(int id) throws SQLException {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {id};
