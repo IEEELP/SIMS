@@ -36,7 +36,7 @@
                     <td><a href="#" id="griant">授权</a>
                         <a href="#">撤权</a>
                     </td>
-                    <td><a href="#">删除</a></td>
+                    <td><a href="/UserController?sims=6&username=${user.username}">删除</a></td>
                 </tr>
                 </c:forEach>
         </table>

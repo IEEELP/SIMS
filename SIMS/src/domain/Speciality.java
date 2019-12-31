@@ -11,7 +11,7 @@ public class Speciality {
     private String faculty;     //所属院系
     private int type;           //培养类型 0普通 1重点
     private String typeStr;
-    private List<Student> studentList;
+    private List<Student> students;
 
     public int getId() {
         return id;
@@ -54,12 +54,12 @@ public class Speciality {
         return typeStr;
     }
 
-    public List<Student> getStudentList() {
-        return studentList;
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     public void setTypeStr(String typeStr) {

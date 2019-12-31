@@ -39,4 +39,12 @@ public interface ISpecialitySercice {
      * @throws Exception
      */
     List<Speciality> findLike(String keyword) throws Exception;
+
+    /**
+     * 查询专业详情信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Speciality findDetail(int id) throws Exception;
 }

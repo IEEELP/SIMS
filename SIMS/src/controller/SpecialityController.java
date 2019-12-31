@@ -40,14 +40,35 @@ public class SpecialityController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }else if (sims==2){ //sims为2，添加专业信息
-
+            String name = request.getParameter("name");
+            String faculty = request.getParameter("faculty");
+            String type = request.getParameter("type");
+            Speciality speciality = new Speciality();
+            speciality.setName(name);
+            speciality.setFaculty(faculty);
+            speciality.setType(Integer.parseInt(type));
+            try {
+                //添加一条专业信息
+                specialitySercice.addSpeciality(speciality);
+                response.sendRedirect("/SpecialityController?sims=0");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }else if (sims==3){ //删除一条专业信息
             String specialityid = request.getParameter("specialityid");
             try {
                 specialitySercice.deleteById(Integer.parseInt(specialityid));
                 response.sendRedirect("/SpecialityController?sims=0");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==4){ //专业详情信息
+            String specialityid = request.getParameter("specialityid");
+            try {
+                Speciality result = specialitySercice.findDetail(Integer.parseInt(specialityid));
+                request.setAttribute("spe",result);
+                request.getRequestDispatcher("/pages/spe-detail.jsp").forward(request,response);
             } catch (Exception e) {
                 e.printStackTrace();
             }

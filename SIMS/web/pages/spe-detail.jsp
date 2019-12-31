@@ -29,29 +29,19 @@
         <h2>专业学生</h2>
         <table id="table2">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>生日</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <c:forEach items="${spe.students}" var="studnet">
+                <tr>
+                    <td>${studnet.sno}</td>
+                    <td>${studnet.name}</td>
+                    <td>${studnet.sexStr}</td>
+                    <td>${studnet.birthdayStr}</td>
+                </tr>
+            </c:forEach>
         </table>
     </div>
 </div>

@@ -51,4 +51,16 @@ public class TeacherService implements ITeacherService {
         List<Teacher> result = teacherDao.findLike("%" + keyword + "%");
         return result;
     }
+
+    /**
+     * 根据教师编号查询教师信息
+     * @param tno
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Teacher findTeacherByTno(int tno) throws Exception {
+        Teacher result = teacherDao.findByTno(tno);
+        return result;
+    }
 }

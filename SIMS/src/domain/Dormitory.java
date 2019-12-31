@@ -10,14 +10,14 @@ public class Dormitory {
     private int dno;        //宿舍号
     private int type;       //宿舍类型 0 单人间 1四人间 2六人间 3八人间
     private String typeStr;
-    private List<Dormitory> dormitoryList;
+    private List<Student> students;
 
-    public List<Dormitory> getDormitoryList() {
-        return dormitoryList;
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setDormitoryList(List<Dormitory> dormitoryList) {
-        this.dormitoryList = dormitoryList;
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     public int getId() {
@@ -78,6 +78,7 @@ public class Dormitory {
                 ", dno=" + dno +
                 ", type=" + type +
                 ", typeStr='" + typeStr + '\'' +
+                ", students=" + students +
                 '}';
     }
 }

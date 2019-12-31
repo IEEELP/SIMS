@@ -53,16 +53,28 @@ public class StudentController extends HttpServlet {
             String birth = request.getParameter("birth");
             String specialityid = request.getParameter("specialityid");
             String dormitoryid = request.getParameter("dormitoryid");
-            Student student = new Student();
-            student.setSno(Integer.parseInt(sno));
-            student.setName(name);
-            student.setSex(Integer.parseInt(sex));
-            student.setBirthday(new StringDateTransformUtils().StringToDate(birth));
-            student.setSpecialityid(Integer.parseInt(specialityid));
-            student.setDormitoryid(Integer.parseInt(dormitoryid));
             try {
-                studentService.addStudent(student);
-                request.getRequestDispatcher("/StudentController?sims=0").forward(request,response);
+                Student student = new Student();
+                if(sno!=null&&name!=null&&sex!=null&&birth!=null&&specialityid!=null&&dormitoryid!=null){
+                    student.setSno(Integer.parseInt(sno));
+                    student.setName(name);
+                    student.setSex(Integer.parseInt(sex));
+                    student.setBirthday(new StringDateTransformUtils().StringToDate(birth));
+                    student.setSpecialityid(Integer.parseInt(specialityid));
+                    student.setDormitoryid(Integer.parseInt(dormitoryid));
+                    //查询数据库中是否存在当前学生信息
+                    Student result = studentService.findStudentBySno(Integer.parseInt(sno));
+                    if (result==null){
+                        studentService.addStudent(student);
+                        request.getRequestDispatcher("/StudentController?sims=0").forward(request,response);
+                    }else{
+                        request.setAttribute("massage","当前学生已经存在，请重新输入！");
+                        request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+                    }
+                }else{
+                    request.setAttribute("massage","学生信息不完整，请重新输入！");
+                    request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -29,7 +29,7 @@
                 <tr>
                     <td>${dor.dno}</td>
                     <td>${dor.type}</td>
-                    <td><a href="#" id="detail">详情</a></td>
+                    <td><a href="/DormitoryController?sims=4&dormitoryid=${dor.id}" id="detail">详情</a></td>
                     <td><a href="/DormitoryController?sims=3&dormitoryid=${dor.id}">删除</a></td>
                 </tr>
             </c:forEach>

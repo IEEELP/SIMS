@@ -60,4 +60,12 @@ public interface ISpecialityDao {
      * @throws Exception
      */
     List<Speciality> findLike(String keyword) throws Exception;
+
+    /**
+     * 查询宿舍详情信息，包含宿舍学生
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Speciality findDetail(int id) throws Exception;
 }

@@ -53,4 +53,12 @@ public interface IDormitoryDao {
      * @throws Exception
      */
     List<Dormitory> findLike(String keyword) throws Exception;
+
+    /**
+     * 查询宿舍信息，包含学生信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Dormitory findDetail(int id) throws Exception;
 }

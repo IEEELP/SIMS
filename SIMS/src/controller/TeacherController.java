@@ -3,6 +3,7 @@ package controller;
 import domain.Teacher;
 import service.impl.TeacherService;
 import service.intf.ITeacherService;
+import utils.StringDateTransformUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,8 +38,29 @@ public class TeacherController extends HttpServlet {
                     e.printStackTrace();
                 }
             }else if (sims==2){ //sims为2，添加教师信息
-
-
+                String tno = request.getParameter("tno");
+                String name = request.getParameter("name");
+                String sex = request.getParameter("sex");
+                String birth = request.getParameter("birth");
+                try {
+                    Teacher teacher = new Teacher();
+                    //查询数据库中是否有该教师信息
+                    Teacher result = teacherService.findTeacherByTno(Integer.parseInt(tno));
+                    if (result==null){
+                        teacher.setTno(Integer.parseInt(tno));
+                        teacher.setName(name);
+                        teacher.setSex(Integer.parseInt(sex));
+                        teacher.setBirthday(new StringDateTransformUtils().StringToDate(birth));
+                        //添加一条教师信息
+                        teacherService.addTeacher(teacher);
+                        response.sendRedirect("/TeacherController?sims=0");
+                    }else {
+                        request.setAttribute("massage","当前教师已经存在，请重新输入");
+                        request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }else if (sims==3){ //删除一条教师信息
                 String teacherid = request.getParameter("teacherid");
                 try {

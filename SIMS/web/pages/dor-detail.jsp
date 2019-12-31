@@ -25,13 +25,19 @@
         <h2>宿舍学生</h2>
         <table id="table2">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>生日</th>
             </tr>
+            <c:forEach items="${dor.students}" var="student">
+                <tr>
+                    <td>${student.sno}</td>
+                    <td>${student.name}</td>
+                    <td>${student.sexStr}</td>
+                    <td>${student.birthdayStr}</td>
+                </tr>
+            </c:forEach>
         </table>
     </div>
 </div>

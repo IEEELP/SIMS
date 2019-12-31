@@ -68,4 +68,16 @@ public class StudentService implements IStudentService {
         Student result = studentDao.findDetail(id);
         return result;
     }
+
+    /**
+     * 根据学生sno查询学生信息
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Student findStudentBySno(int sno) throws Exception {
+        Student result = studentDao.findBySno(sno);
+        return result;
+    }
+
 }

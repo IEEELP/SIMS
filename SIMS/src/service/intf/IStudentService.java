@@ -47,4 +47,11 @@ public interface IStudentService {
      * @throws Exception
      */
     Student findDetail(int id) throws Exception;
+
+    /**
+     * 根据学生sno查询学生信息
+     * @return
+     * @throws Exception
+     */
+    Student findStudentBySno(int sno) throws Exception;
 }

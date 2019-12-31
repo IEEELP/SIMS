@@ -43,4 +43,16 @@ public class SpecialityService implements ISpecialitySercice {
         List<Speciality> result = specialityDao.findLike("%" + keyword + "%");
         return result;
     }
+
+    /**
+     * 查询专业详情
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Speciality findDetail(int id) throws Exception {
+        Speciality result = specialityDao.findDetail(id);
+        return result;
+    }
 }

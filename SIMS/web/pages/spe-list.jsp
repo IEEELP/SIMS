@@ -31,7 +31,7 @@
                     <td>${spe.name}</td>
                     <td>${spe.faculty}</td>
                     <td>${spe.type}</td>
-                    <td><a href="#" id="detail">详情</a></td>
+                    <td><a href="/SpecialityController?sims=4&specialityid=${spe.id}" id="detail">详情</a></td>
                     <td><a href="/SpecialityController?sims=3&specialityid=${spe.id}">删除</a></td>
                 </tr>
             </c:forEach>

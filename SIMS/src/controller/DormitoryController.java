@@ -42,13 +42,39 @@ public class DormitoryController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else if (sims==2){ //sims为2，添加课程信息
-
-        }else if (sims==3){ //删除一条课程信息
+        }else if (sims==2){ //sims为2，添加宿舍信息
+            String dno = request.getParameter("dno");
+            String type = request.getParameter("type");
+            try {
+                //查询数据库中是否存在当前宿舍信息
+                Dormitory result = dormitoryService.findByDno(Integer.parseInt(dno));
+                if (result==null){
+                    Dormitory dormitory = new Dormitory();
+                    dormitory.setDno(Integer.parseInt(dno));
+                    dormitory.setType(Integer.parseInt(type));
+                    dormitoryService.addDormitory(dormitory);
+                    response.sendRedirect("/DormitoryController?sims=0");
+                }else {
+                    request.setAttribute("massage","当前宿舍信息已经存在，请重新输入");
+                    request.getRequestDispatcher("/pages/fail.jsp");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==3){ //删除一条宿舍信息
             String dormitoryid = request.getParameter("dormitoryid");
             try {
                 dormitoryService.deleteById(Integer.parseInt(dormitoryid));
                 response.sendRedirect("/DormitoryController?sims=0");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==4){ //宿舍详情信息
+            String dormitoryid = request.getParameter("dormitoryid");
+            try {
+                Dormitory result = dormitoryService.findDetail(Integer.parseInt(dormitoryid));
+                request.setAttribute("dor",result);
+                request.getRequestDispatcher("/pages/dor-detail.jsp").forward(request,response);
             } catch (Exception e) {
                 e.printStackTrace();
             }

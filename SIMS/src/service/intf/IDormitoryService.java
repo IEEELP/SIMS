@@ -42,5 +42,12 @@ public interface IDormitoryService {
      */
     List<Dormitory> findLike(String keyword) throws Exception;
 
+    /**
+     * 查询宿舍详情信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Dormitory findDetail(int id) throws Exception;
 
 }

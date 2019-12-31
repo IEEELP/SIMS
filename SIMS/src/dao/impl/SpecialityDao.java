@@ -3,6 +3,7 @@ package dao.impl;
 import dao.intf.ISpecialityDao;
 import domain.Course;
 import domain.Speciality;
+import domain.Student;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -67,6 +68,23 @@ public class SpecialityDao implements ISpecialityDao {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
         Object[] param = {keyword};
         List<Speciality> result = queryRunner.query("select * from speciality where name like ?", new BeanListHandler<Speciality>(Speciality.class), param);
+        return result;
+    }
+
+    /**
+     * 询专业详情信息，包含专业学生
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Speciality findDetail(int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {id};
+        Speciality result = queryRunner.query("select * from speciality where id =?", new BeanHandler<Speciality>(Speciality.class), param);
+        Object[] p = {result.getId()};
+        List<Student> students = queryRunner.query("select * from student where specialityid=?", new BeanListHandler<Student>(Student.class), p);
+        result.setStudents(students);
         return result;
     }
 }

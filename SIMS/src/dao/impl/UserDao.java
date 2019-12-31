@@ -21,14 +21,14 @@ public class UserDao implements IUserDao {
     //根据用户名删除用户信息
     @Override
     public void deleteByUsername(String username) throws Exception {
-        QueryRunner queryRunner=new QueryRunner();
+        QueryRunner queryRunner=new QueryRunner(JDBCUtils.getDataSource());
         Object[] param={username};
         queryRunner.update("delete from user where username=?",param);
     }
     //根据用户名用户修改密码
     @Override
     public void updateByUsername(String username,String password) throws Exception {
-        QueryRunner queryRunner=new QueryRunner();
+        QueryRunner queryRunner=new QueryRunner(JDBCUtils.getDataSource());
         Object[] param={username,password};
         queryRunner.update("update user set password=？where username=?",param);
     }

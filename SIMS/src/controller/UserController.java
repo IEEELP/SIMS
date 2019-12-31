@@ -87,8 +87,15 @@ public class UserController extends HttpServlet {
                     try {
                         user.setType(Integer.parseInt(request.getParameter("type")));
                         user.setPassword("123456");
-                        userService.add(user);
-                        response.sendRedirect("/UserController?sims=2");
+                        //查询数据库添加用户是否存在
+                        User result = userService.findUserByName(username);
+                        if (result==null){
+                            userService.add(user);
+                            response.sendRedirect("/UserController?sims=2");
+                        }else {
+                            request.setAttribute("massage","添加用户已经存在，请重新输入");
+                            request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -99,6 +106,13 @@ public class UserController extends HttpServlet {
                 List<User> result = userService.findLike(keyword);
                 request.setAttribute("result",result);
                 request.getRequestDispatcher("/pages/user-list.jsp").forward(request,response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==6){ //用户删除
+            try {
+                userService.deleteUserByName(username);
+                response.sendRedirect("/UserController?sims=2");
             } catch (Exception e) {
                 e.printStackTrace();
             }

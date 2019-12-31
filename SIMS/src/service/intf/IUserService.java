@@ -38,4 +38,18 @@ public interface IUserService {
      */
     List<User> findLike(String keyword) throws Exception;
 
+    /**
+     * 通过用户名查询用户信息
+     * @param name
+     * @return
+     * @throws Exception
+     */
+    User findUserByName(String name) throws Exception;
+
+    /**
+     * 根据用户名删除用户信息
+     * @param name
+     * @throws Exception
+     */
+    void deleteUserByName(String name) throws Exception;
 }

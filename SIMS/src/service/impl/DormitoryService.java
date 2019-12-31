@@ -49,4 +49,16 @@ public class DormitoryService implements IDormitoryService {
         List<Dormitory> result = dormitoryDao.findLike("%" + keyword + "%");
         return result;
     }
+
+    /**
+     * 查询宿舍详情信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Dormitory findDetail(int id) throws Exception {
+        Dormitory result = dormitoryDao.findDetail(id);
+        return result;
+    }
 }

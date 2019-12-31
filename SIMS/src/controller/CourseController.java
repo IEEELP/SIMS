@@ -40,9 +40,20 @@ public class CourseController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }else if (sims==2){ //sims为2，添加课程信息
-
+            String name = request.getParameter("name");
+            String cridit = request.getParameter("cridit");
+            String type = request.getParameter("type");
+            Course course = new Course();
+            course.setName(name);
+            course.setCridit(Integer.parseInt(cridit));
+            course.setCheck(Integer.parseInt(type));
+            try {
+                courseService.addCourse(course);
+                response.sendRedirect("/CourseController?sims=0");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }else if (sims==3){ //删除一条课程信息
             String courseid = request.getParameter("courseid");
             try {

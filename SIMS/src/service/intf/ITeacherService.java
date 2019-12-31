@@ -32,4 +32,12 @@ public interface ITeacherService {
      * @throws Exception
      */
     List<Teacher> findLike(String keyword) throws Exception;
+
+    /**
+     * 根据教师tno查询教师信息
+     * @param tno
+     * @return
+     * @throws Exception
+     */
+    Teacher findTeacherByTno(int tno) throws Exception;
 }

@@ -76,4 +76,21 @@ public class UserService implements IUserService {
         List<User> result = userDao.findLike("%" + keyword + "%");
         return result;
     }
+
+    @Override
+    public User findUserByName(String name) throws Exception {
+        User result = userDao.findUserByUsername(name);
+        return result;
+    }
+
+    /**
+     * 根据用户名删除用户信息
+     * @param name
+     * @throws Exception
+     */
+    @Override
+    public void deleteUserByName(String name) throws Exception {
+        userDao.deleteByUsername(name);
+    }
+
 }
