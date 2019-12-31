@@ -11,8 +11,9 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="search">
-        <form action="#" method="post">
+        <form action="/SpecialityController" method="post">
             <input type="text" name="keyword" placeholder="请输入关键字">
+            <input type="hidden" name="sims" value="1"/>
             <input type="submit" name="submit" value="搜索" id="searchbtn">
         </form>
     </div>
@@ -31,7 +32,7 @@
                     <td>${spe.faculty}</td>
                     <td>${spe.type}</td>
                     <td><a href="#" id="detail">详情</a></td>
-                    <td><a href="#">删除</a></td>
+                    <td><a href="/SpecialityController?sims=3&specialityid=${spe.id}">删除</a></td>
                 </tr>
             </c:forEach>
         </table>

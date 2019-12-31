@@ -11,6 +11,7 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="studetail">
+        <h2>学生详情</h2>
         <table id="table">
             <tr>
                 <th>学号</th>

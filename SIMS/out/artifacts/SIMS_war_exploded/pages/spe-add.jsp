@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,8 +10,8 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="addlist">
-        <form action="UserController/" method="post">
-            <input type="hidden" name="sims" value="#">
+        <form action="/SpecialityController" method="post">
+            <input type="hidden" name="sims" value="2">
             <span>名      称:</span><input type="text" name="name" id="nameadd" ><br/>
             <span>院      系:</span><input type="text" name="faculty" id="facultyadd" ><br/>
             <span>类      型:</span><input type="radio" name="type" value="0" class="typeinput">普通

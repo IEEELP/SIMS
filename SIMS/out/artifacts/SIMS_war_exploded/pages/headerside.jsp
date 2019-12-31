@@ -21,7 +21,7 @@
         <li id="stumanner" class="bigslide">学生管理
             <ul id="stuul">
                 <li id="stulist" name="stulist"><a href="${pageContext.request.contextPath}/StudentController?sims=0"></a></li>
-                <li id="stuadd" name="stuadd"><a href="${pageContext.request.contextPath}/pages/stu-add.jsp"></a></li>
+                <li id="stuadd" name="stuadd"><a href="${pageContext.request.contextPath}/StudentController?sims=5"></a></li>
             </ul>
         </li>
         <li id="teamanner" class="bigslide">教师管理
@@ -44,7 +44,7 @@
         </li>
         <li id="dormanner" class="bigslide">宿舍管理
             <ul id="dorul">
-                <li id="dorlist" name="dorlist"><a href="${pageContext.request.contextPath}/DormitoryController"></a></li>
+                <li id="dorlist" name="dorlist"><a href="${pageContext.request.contextPath}/DormitoryController?sims=0"></a></li>
                 <li id="doradd" name="doradd"><a href="${pageContext.request.contextPath}/pages/dor-add.jsp"></a></li>
             </ul>
         </li>

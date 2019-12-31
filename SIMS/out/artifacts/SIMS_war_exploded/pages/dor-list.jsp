@@ -11,8 +11,9 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="search">
-        <form action="#" method="post">
+        <form action="/DormitoryController" method="post">
             <input type="text" name="keyword" placeholder="请输入关键字">
+            <input type="hidden" name="sims" value="1"/>
             <input type="submit" name="submit" value="搜索" id="searchbtn">
         </form>
     </div>
@@ -29,7 +30,7 @@
                     <td>${dor.dno}</td>
                     <td>${dor.type}</td>
                     <td><a href="#" id="detail">详情</a></td>
-                    <td><a href="#">删除</a></td>
+                    <td><a href="/DormitoryController?sims=3&dormitoryid=${dor.id}">删除</a></td>
                 </tr>
             </c:forEach>
         </table>

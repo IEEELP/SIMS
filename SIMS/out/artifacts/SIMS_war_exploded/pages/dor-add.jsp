@@ -11,8 +11,8 @@
     <div class="mainbg"></div>
     <div class="mainshadow"></div>
     <div class="addlist">
-        <form action="UserController/" method="post">
-            <input type="hidden" name="sims" value="#">
+        <form action="/DormitoryController" method="post">
+            <input type="hidden" name="sims" value="2">
             <span>宿舍号:</span><input type="text" name="dno" id="dnoadd" ><br/>
             <span>类&nbsp;&nbsp;&nbsp;型:</span><select class="dorselect">
                                         <option name="单人间" value="0">单人间</option>
