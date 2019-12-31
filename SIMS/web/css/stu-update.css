@@ -25,27 +25,43 @@
     left: 0;
     z-index: -1;
 }
-.addlist{
-    width: 600px;
+.stuupdate{
+    margin-top:50px;
+    margin-left: 250px;
+    width: 850px;
     height: 600px;
-    border: 1px solid #000;
-    margin-left: 160px;
+    background-color: rgba(255,255,255,0.8);
+    padding-top: 30px;
+}
+.stumessage{
+    width: 500px;
+    height: 50px;
+    background-color: #ccc;
+    line-height: 50px;
+    margin-left: 180px;
+    font-size: 16px;
+}
+.stumessage span{
+    margin-left: 30px;
+}
+.stumessage span:nth-child(1){
+    margin-left: 80px;
+}
+.update{
+    width: 500px;
+    height: 300px;
+    border: 1px solid;
+    margin-left: 180px;
     margin-top: 50px;
-    background-color: rgba(255, 255, 255, .8);
-    box-shadow: 5px 5px 5px #000;
 }
-.addlist span{
-    margin-left: 50px;
+.update span{
+    margin-left: 75px;
 }
-.addlist input,.addlist .academicselect{
+.update select{
     width: 250px;
     height: 30px;
     margin-top: 25px;
     margin-left: 25px;
-}
-.addlist .sexinput{
-    width: 20px;
-    height: 20px;
 }
 #addbtn{
     margin-top: 55px;

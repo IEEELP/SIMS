@@ -37,7 +37,7 @@
 .addlist span{
     margin-left: 50px;
 }
-.addlist input{
+.addlist input,.addlist .academicselect{
     width: 250px;
     height: 30px;
     margin-top: 25px;

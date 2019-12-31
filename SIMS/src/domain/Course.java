@@ -7,19 +7,19 @@ public class Course {
     private String name;    //课程名
     private int cridit;     //学分值
     private int check;      //考核方式 0考查 1考试
-    private String checakStr;
+    private String checkStr;
 
-    public String getChecakStr() {
+    public String getCheckStr() {
         if (check==0){
-            checakStr="考查";
+            checkStr="考查";
         }else {
-            checakStr="考试";
+            checkStr="考试";
         }
-        return checakStr;
+        return checkStr;
     }
 
-    public void setChecakStr(String checakStr) {
-        this.checakStr = checakStr;
+    public void setCheckStr(String checkStr) {
+        this.checkStr = checkStr;
     }
 
     public int getId() {
@@ -54,12 +54,12 @@ public class Course {
         this.check = check;
     }
 
-    public Course(int id, String name, int cridit, int check, String checakStr) {
+    public Course(int id, String name, int cridit, int check, String checkStr) {
         this.id = id;
         this.name = name;
         this.cridit = cridit;
         this.check = check;
-        this.checakStr = checakStr;
+        this.checkStr = checkStr;
     }
 
     public Course() {
@@ -72,7 +72,7 @@ public class Course {
                 ", name='" + name + '\'' +
                 ", cridit=" + cridit +
                 ", check=" + check +
-                ", checakStr='" + checakStr + '\'' +
+                ", checkStr='" + checkStr + '\'' +
                 '}';
     }
 }

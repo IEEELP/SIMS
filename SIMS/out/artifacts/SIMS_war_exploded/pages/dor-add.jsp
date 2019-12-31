@@ -14,7 +14,7 @@
         <form action="/DormitoryController" method="post">
             <input type="hidden" name="sims" value="2">
             <span>宿舍号:</span><input type="text" name="dno" id="dnoadd" ><br/>
-            <span>类&nbsp;&nbsp;&nbsp;型:</span><select class="dorselect">
+            <span>类&nbsp;&nbsp;&nbsp;型:</span><select class="dorselect" name="type">
                                         <option name="单人间" value="0">单人间</option>
                                         <option name="四人间" value="1">四人间</option>
                                         <option name="六人间" value="2">六人间</option>

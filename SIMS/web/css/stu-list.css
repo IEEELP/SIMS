@@ -60,7 +60,7 @@ table a{
     color: #ff0000;
     border: 1px solid #ff0000;
 }
-table #detail{
+table #detail,table #update{
     color: blue;
     border: 1px solid blue;
 }

@@ -22,6 +22,7 @@
                 <th>工号</th>
                 <th>姓名</th>
                 <th>性别</th>
+                <th>学历</th>
                 <th>生日</th>
                 <th>删除用户</th>
             </tr>
@@ -30,6 +31,7 @@
                     <td>${teacher.tno}</td>
                     <td>${teacher.name}</td>
                     <td>${teacher.sexStr}</td>
+                    <td>${teacher.academicStr}</td>
                     <td>${teacher.birthdayStr}</td>
                     <td><a href="${pageContext.request.contextPath}/TeacherController?sims=3&teacherid=${teacher.id}">删除</a></td>
                 </tr>

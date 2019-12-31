@@ -25,7 +25,7 @@
     left: 0;
     z-index: -1;
 }
-.spedetail{
+.dorupdate{
     margin-top:50px;
     margin-left: 250px;
     width: 850px;
@@ -33,38 +33,43 @@
     background-color: rgba(255,255,255,0.8);
     padding-top: 30px;
 }
-.spedetail h2{
-    display: inline-block;
-    margin-left: 365px;
-    margin-bottom: 30px;
-}
-table,th,tr,td{
-    border: 1px solid #000;
-}
-th{
-    background-image: linear-gradient(to right,#fff,#ccc);
-}
-td{
-    background-color: #fff;
-}
-table{
-    border-collapse: collapse;
-    margin-left: 120px;
-}
-table a{
-    color: #ff0000;
-    border: 1px solid #ff0000;
-}
-th,td{
-    width: 300px;
-    height: 50px;
-    text-align: center;
-}
-#table2{
-    margin-left: 120px;
+.dormessage{
     width: 600px;
-}
-#table2 tr,#table2 td{
-    width: 80px;
     height: 50px;
+    background-color: #ccc;
+    line-height: 50px;
+    margin-left: 120px;
+    font-size: 16px;
+}
+.dormessage span{
+    margin-left: 30px;
+}
+.dormessage span:nth-child(1){
+    margin-left: 80px;
+}
+.update{
+    width: 300px;
+    height: 400px;
+    border: 1px solid;
+    margin-left: 250px;
+    margin-top: 50px;
+    overflow: auto;
+}
+.update span{
+    margin-left: 75px;
+}
+.update h2{
+    display: inline-block;
+    margin-left: 95px;
+}
+.update input{
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: 18px;
+}
+#addbtn{
+    margin-top: 55px;
+    margin-left: 95px;
+    width: 90px;
+    height: 45px;
 }

@@ -23,13 +23,17 @@
                 <th>宿舍号</th>
                 <th>类型</th>
                 <th>详情</th>
+                <th>注册</th>
+                <th>撤销</th>
                 <th>删除宿舍</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="dor">
                 <tr>
                     <td>${dor.dno}</td>
-                    <td>${dor.type}</td>
+                    <td>${dor.typeStr}</td>
                     <td><a href="/DormitoryController?sims=4&dormitoryid=${dor.id}" id="detail">详情</a></td>
+                    <td><a href="#" id="update">注册</a></td>
+                    <td><a href="#" id="update2">撤销</a> </td>
                     <td><a href="/DormitoryController?sims=3&dormitoryid=${dor.id}">删除</a></td>
                 </tr>
             </c:forEach>

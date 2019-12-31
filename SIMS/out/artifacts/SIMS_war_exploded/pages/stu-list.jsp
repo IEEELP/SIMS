@@ -27,6 +27,7 @@
                 <th>专业</th>
                 <th>宿舍</th>
                 <th>详情</th>
+                <th>注册更新</th>
                 <th>删除用户</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="student">
@@ -38,6 +39,7 @@
                     <td>${student.speciality.name}</td>
                     <td>${student.dormitory.dno}</td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=4&studentid=${student.id}" id="detail">详情</a></td>
+                    <td><a href="#" id="update">注册更新</a></td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=3&studentid=${student.id}">删除</a></td>
                 </tr>
             </c:forEach>

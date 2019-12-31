@@ -24,6 +24,8 @@
                 <th>院系</th>
                 <th>类型</th>
                 <th>详情</th>
+                <th>注册</th>
+                <th>撤销</th>
                 <th>删除专业</th>
             </tr>
             <c:forEach items="${requestScope.result}" var="spe">
@@ -31,7 +33,9 @@
                     <td>${spe.name}</td>
                     <td>${spe.faculty}</td>
                     <td>${spe.type}</td>
-                    <td><a href="#" id="detail">详情</a></td>
+                    <td><a href="/SpecialityController?sims=4&specialityid=${spe.id}" id="detail">详情</a></td>
+                    <td><a href="#" id="update">注册</a></td>
+                    <td><a href="#" id="update2">撤销</a> </td>
                     <td><a href="/SpecialityController?sims=3&specialityid=${spe.id}">删除</a></td>
                 </tr>
             </c:forEach>

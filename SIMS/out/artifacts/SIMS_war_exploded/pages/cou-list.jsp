@@ -29,7 +29,7 @@
                 <tr>
                     <td>${course.name}</td>
                     <td>${course.cridit}</td>
-                    <td>${course.check}</td>
+                    <td>${course.checkStr}</td>
                     <td><a href="/CourseController?sims=3&courseid=${course.id}">删除</a></td>
                 </tr>
             </c:forEach>
