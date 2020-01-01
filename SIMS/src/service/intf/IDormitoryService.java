@@ -49,5 +49,4 @@ public interface IDormitoryService {
      * @throws Exception
      */
     Dormitory findDetail(int id) throws Exception;
-
 }

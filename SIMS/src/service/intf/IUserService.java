@@ -52,4 +52,11 @@ public interface IUserService {
      * @throws Exception
      */
     void deleteUserByName(String name) throws Exception;
+
+    /**
+     * 授权和解除算法
+     * @param type
+     * @throws Exception
+     */
+    void updateGrant(String name, int type) throws Exception;
 }

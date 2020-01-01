@@ -32,8 +32,8 @@
                     <td>${dor.dno}</td>
                     <td>${dor.typeStr}</td>
                     <td><a href="/DormitoryController?sims=4&dormitoryid=${dor.id}" id="detail">详情</a></td>
-                    <td><a href="#" id="update">注册</a></td>
-                    <td><a href="#" id="update2">撤销</a> </td>
+                    <td><a href="/DormitoryController?sims=5&dormitoryid=${dor.id}" id="update">注册</a></td>
+                    <td><a href="/DormitoryController?sims=7&dormitoryid=${dor.id}" id="update2">撤销</a> </td>
                     <td><a href="/DormitoryController?sims=3&dormitoryid=${dor.id}">删除</a></td>
                 </tr>
             </c:forEach>

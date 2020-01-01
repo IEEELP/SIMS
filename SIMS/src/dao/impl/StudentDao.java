@@ -144,4 +144,117 @@ public class StudentDao implements IStudentDao {
         result.setSpeciality(speciality);
         return result;
     }
+
+    /**
+     *  更新学生专业和宿舍信息
+     * @param specialityid
+     * @param dormitoryid
+     * @throws Exception
+     */
+    @Override
+    public void updateStudent(int specialityid, int dormitoryid,int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param ={specialityid,dormitoryid,id};
+        queryRunner.update("update student set specialityid=?,dormitoryid=? where id=?",param);
+    }
+
+    /**
+     * 获取没有宿舍的学生信息
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentNotDormitory() throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        List<Student> result = queryRunner.query("select * from student where dormitoryid is null", new BeanListHandler<Student>(Student.class));
+        return result;
+    }
+
+    /**
+     * 查询当前宿舍的所有学生
+     * @param dorId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentDormitory(int dorId) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {dorId};
+        List<Student> result = queryRunner.query("select * from student where dormitoryid=?", new BeanListHandler<Student>(Student.class), param);
+        return result;
+    }
+
+    /**
+     * 更新学生信息(添加宿舍)
+     * @param dorId
+     * @param id
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentDormitory(int dorId, int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {dorId,id};
+        queryRunner.update("update student set dormitoryid=? where id=?",param);
+    }
+
+    /**
+     * 删除学生的宿舍信息
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentDormitoryIsNull(int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param ={id};
+        queryRunner.update("update student set dormitoryid=null where id=?",param);
+    }
+
+    /**
+     * 查询没有专业的学生
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentNotSpeciality() throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        List<Student> result = queryRunner.query("select * from student where specialityid is null", new BeanListHandler<Student>(Student.class));
+        return result;
+    }
+
+    /**
+     * 获取当前专业的所有学生
+     * @param speId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentSpeciality(int speId) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {speId};
+        List<Student> result = queryRunner.query("select * from student where specialityid=?", new BeanListHandler<Student>(Student.class), param);
+        return result;
+    }
+
+    /**
+     * 更新学生信息(插入专业信息)
+     * @param speId
+     * @param id
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentSpeciality(int speId, int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {speId,id};
+        queryRunner.update("update student set specialityid=? where id=?",param);
+    }
+
+    /**
+     * 更新学生信息(删除专业信息)
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentSpecialityIsNull(int id) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {id};
+        queryRunner.update("update student set specialityid=null where id=?",param);
+    }
 }

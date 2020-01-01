@@ -80,4 +80,110 @@ public class StudentService implements IStudentService {
         return result;
     }
 
+    /**
+     * 学生注册更新(专业和宿舍)
+     * @param specialityid
+     * @param dormitoryid
+     * @throws Exception
+     */
+    @Override
+    public void updateStudent(int specialityid, int dormitoryid,int id) throws Exception {
+        studentDao.updateStudent(specialityid,dormitoryid,id);
+    }
+
+    /**
+     * 查询没有宿舍的学生
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentNotDormitory() throws Exception{
+        List<Student> result = studentDao.findStudentNotDormitory();
+        return result;
+    }
+
+    /**
+     * 给学生添加宿舍
+     * @param dorId
+     * @param
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentDormitory(int dorId, String[] values) throws Exception {
+        for (String s : values) {
+          studentDao.updateStudentDormitory(dorId,Integer.parseInt(s));
+        }
+    }
+
+    /**
+     * 查询当前宿舍的所有学生信息
+     * @param dorId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentDormitory(int dorId) throws Exception {
+        List<Student> result = studentDao.findStudentDormitory(dorId);
+        return result;
+    }
+
+    /**
+     * 删除当前学生的宿舍信息
+     * @param values
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentDormitoryIsNull(String[] values) throws Exception {
+        for (String s: values){
+            studentDao.updateStudentDormitoryIsNull(Integer.parseInt(s));
+        }
+    }
+
+    /**
+     * 查询没有专业的学生
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentNotSpeciality() throws Exception{
+        List<Student> result = studentDao.findStudentNotSpeciality();
+        return result;
+    }
+
+    /**
+     * 给学生添加专业
+     * @param speId
+     * @param values
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentSpeciality(int speId, String[] values) throws Exception {
+        for (String s:values){
+            studentDao.updateStudentSpeciality(speId,Integer.parseInt(s));
+        }
+    }
+
+    /**
+     * 查询当前专业的所有学生
+     * @param speId
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<Student> findStudentSpeciality(int speId) throws Exception {
+        List<Student> result = studentDao.findStudentSpeciality(speId);
+        return result;
+    }
+
+    /**
+     * 删除当前学生的专业信息
+     * @param values
+     * @throws Exception
+     */
+    @Override
+    public void updateStudentSpecialityIsNull(String[] values) throws Exception {
+        for (String s:values){
+            studentDao.updateStudentSpecialityIsNull(Integer.parseInt(s));
+        }
+    }
 }

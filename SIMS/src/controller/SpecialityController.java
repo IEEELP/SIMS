@@ -4,7 +4,9 @@ import domain.Dormitory;
 import domain.Speciality;
 import domain.Student;
 import service.impl.SpecialityService;
+import service.impl.StudentService;
 import service.intf.ISpecialitySercice;
+import service.intf.IStudentService;
 import utils.StringDateTransformUtils;
 
 import javax.servlet.ServletException;
@@ -18,6 +20,7 @@ import java.util.List;
 @WebServlet("/SpecialityController")
 public class SpecialityController extends HttpServlet {
     ISpecialitySercice specialitySercice = new SpecialityService();
+    IStudentService studentService = new StudentService();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int sims = Integer.parseInt(request.getParameter("sims"));
@@ -71,6 +74,71 @@ public class SpecialityController extends HttpServlet {
                 request.getRequestDispatcher("/pages/spe-detail.jsp").forward(request,response);
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        }else if (sims==5){ //注册(返回专业和没有选择专业的数据)
+            int type = (Integer) request.getSession().getAttribute("type");
+            //管理员权限
+            if (1==type){
+                int specialityid = Integer.parseInt(request.getParameter("specialityid"));
+                try {
+                    Speciality spe = specialitySercice.findDetail(specialityid);
+                    List<Student> student = studentService.findStudentNotSpeciality();
+                    request.setAttribute("student",student);
+                    request.setAttribute("spe",spe);
+                    request.getRequestDispatcher("/pages/spe-update-on.jsp").forward(request,response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","当前用户权限不足！");
+                request.getRequestDispatcher("/pages/fail.jsp");
+            }
+        }else if (sims==6){ //注册(给学生添加专业)
+            String specialityid = request.getParameter("specialityid");
+            System.out.println(specialityid);
+            String[] values = request.getParameterValues("studentid") ;
+            System.out.println(values[0]);
+            if(values!=null&&values.length>0){
+                try {
+                    studentService.updateStudentSpeciality(Integer.parseInt(specialityid),values);
+                    response.sendRedirect("/SpecialityController?sims=0");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","请选择专业学生！");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+            }
+        }else if (sims==7){ //撤销(返回该专业和选择该专业的学生)
+            int type = (Integer) request.getSession().getAttribute("type");
+            //管理员权限
+            if (1==type){
+                int specialityid = Integer.parseInt(request.getParameter("specialityid"));
+                try {
+                    Speciality spe = specialitySercice.findDetail(specialityid);
+                    List<Student> result = studentService.findStudentSpeciality(specialityid);
+                    request.setAttribute("spe",spe);
+                    request.setAttribute("student",result);
+                    request.getRequestDispatcher("/pages/spe-update-off.jsp").forward(request,response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","当前用户权限不足！");
+                request.getRequestDispatcher("/pages/fail.jsp");
+            }
+        }else if (sims==8){ //撤销(删除学生专业)
+            String[] values = request.getParameterValues("studentid");
+            if(values!=null&&values.length>0){
+                try {
+                    studentService.updateStudentSpecialityIsNull(values);
+                    response.sendRedirect("/SpecialityController?sims=0");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","请选择专业学生！");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
             }
         }
     }

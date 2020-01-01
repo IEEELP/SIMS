@@ -80,7 +80,18 @@ public class UserController extends HttpServlet {
                 e.printStackTrace();
             }
         } else if (sims == 3) {//用户授权
-
+            String name = (String) session.getAttribute("username");
+            if ("root".equals(name)){
+                try {
+                    userService.updateGrant(username,1);
+                    response.sendRedirect("/UserController?sims=2");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","非ROOT用户，权限不足");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+            }
         }else if (sims==4){//用户添加
                 int type= (int) session.getAttribute("type");
                 if (type==1){//如果是管理员
@@ -115,6 +126,19 @@ public class UserController extends HttpServlet {
                 response.sendRedirect("/UserController?sims=2");
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        }else if (sims==7){ //撤销授权
+            String name = (String) session.getAttribute("username");
+            if ("root".equals(name)&&!"root".equals(username)){
+                try {
+                    userService.updateGrant(username,0);
+                    response.sendRedirect("/UserController?sims=2");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","管理员不能给自己撤权！");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
             }
         }
         //if-end

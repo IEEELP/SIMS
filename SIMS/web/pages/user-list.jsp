@@ -33,8 +33,8 @@
                     <td>${user.email}</td>
                     <td>${user.timeStr}</td>
                     <td>${user.typeStr}</td>
-                    <td><a href="#" id="griant">授权</a>
-                        <a href="#">撤权</a>
+                    <td><a href="/UserController?sims=3&username=${user.username}" id="griant">授权</a>
+                        <a href="/UserController?sims=7&username=${user.username}">撤权</a>
                     </td>
                     <td><a href="/UserController?sims=6&username=${user.username}">删除</a></td>
                 </tr>

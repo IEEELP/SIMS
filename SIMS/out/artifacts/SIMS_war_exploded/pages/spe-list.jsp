@@ -32,10 +32,10 @@
                 <tr>
                     <td>${spe.name}</td>
                     <td>${spe.faculty}</td>
-                    <td>${spe.type}</td>
+                    <td>${spe.typeStr}</td>
                     <td><a href="/SpecialityController?sims=4&specialityid=${spe.id}" id="detail">详情</a></td>
-                    <td><a href="#" id="update">注册</a></td>
-                    <td><a href="#" id="update2">撤销</a> </td>
+                    <td><a href="/SpecialityController?sims=5&specialityid=${spe.id}" id="update">注册</a></td>
+                    <td><a href="/SpecialityController?sims=7&specialityid=${spe.id}" id="update2">撤销</a> </td>
                     <td><a href="/SpecialityController?sims=3&specialityid=${spe.id}">删除</a></td>
                 </tr>
             </c:forEach>

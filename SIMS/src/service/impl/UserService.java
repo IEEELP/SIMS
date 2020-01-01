@@ -93,4 +93,9 @@ public class UserService implements IUserService {
         userDao.deleteByUsername(name);
     }
 
+    @Override
+    public void updateGrant(String name, int type) throws Exception {
+        userDao.updateGrant(name,type);
+    }
+
 }

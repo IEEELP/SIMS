@@ -20,4 +20,6 @@ public interface IUserDao {
     int insert(User user)throws Exception;
     //模糊查询
     List<User> findLike(String keyword) throws Exception;
+    //授权
+    void updateGrant(String name , int type) throws Exception;
 }

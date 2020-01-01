@@ -67,5 +67,17 @@ public class UserDao implements IUserDao {
         return result;
     }
 
+    /**
+     * 授权
+     * @param type
+     * @throws Exception
+     */
+    @Override
+    public void updateGrant(String name,int type) throws Exception {
+        QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] param = {type,name};
+        queryRunner.update("update user set type=? where username=?", param);
+    }
+
 
 }

@@ -55,7 +55,7 @@ public class StudentController extends HttpServlet {
             String dormitoryid = request.getParameter("dormitoryid");
             try {
                 Student student = new Student();
-                if(sno!=null&&name!=null&&sex!=null&&birth!=null&&specialityid!=null&&dormitoryid!=null){
+                if(sno!=null&&name!=null&&sex!=null&&birth!=null){
                     student.setSno(Integer.parseInt(sno));
                     student.setName(name);
                     student.setSex(Integer.parseInt(sex));
@@ -103,6 +103,35 @@ public class StudentController extends HttpServlet {
                 request.setAttribute("spe",specialities);
                 request.setAttribute("dor",dormitories);
                 request.getRequestDispatcher("/pages/stu-add.jsp").forward(request,response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (sims==6){ //注册更新(返回专业和宿舍信息)
+            int type = (Integer) request.getSession().getAttribute("type");
+            if (1==type){
+                try {
+                    String studentid = request.getParameter("studentid");
+                    Student student = studentService.findDetail(Integer.parseInt(studentid));
+                    List<Speciality> spe = specialitySercice.findAll();
+                    List<Dormitory> dor = dormitoryService.findAll();
+                    request.setAttribute("student",student);
+                    request.setAttribute("spe",spe);
+                    request.setAttribute("dor",dor);
+                    request.getRequestDispatcher("/pages/stu-update.jsp").forward(request,response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }else {
+                request.setAttribute("massage","用户权限不足！");
+                request.getRequestDispatcher("/pages/fail.jsp").forward(request,response);
+            }
+        }else if (sims==7){ //注册更新(更新专业和宿舍信息)
+            int studentid = Integer.parseInt(request.getParameter("studentid"));
+            int specialityid = Integer.parseInt(request.getParameter("specialityid"));
+            int dormitoryid = Integer.parseInt(request.getParameter("dormitoryid"));
+            try {
+                studentService.updateStudent(specialityid,dormitoryid,studentid);
+                response.sendRedirect("/StudentController?sims=0");
             } catch (Exception e) {
                 e.printStackTrace();
             }

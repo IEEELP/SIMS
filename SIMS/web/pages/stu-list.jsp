@@ -39,7 +39,7 @@
                     <td>${student.speciality.name}</td>
                     <td>${student.dormitory.dno}</td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=4&studentid=${student.id}" id="detail">详情</a></td>
-                    <td><a href="#" id="update">注册更新</a></td>
+                    <td><a href="/StudentController?sims=6&studentid=${student.id}" id="update">注册更新</a></td>
                     <td><a href="${pageContext.request.contextPath}/StudentController?sims=3&studentid=${student.id}">删除</a></td>
                 </tr>
             </c:forEach>
