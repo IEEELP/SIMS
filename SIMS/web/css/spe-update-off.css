@@ -34,11 +34,11 @@
     padding-top: 30px;
 }
 .spemessage{
-    width: 600px;
+    width: 750px;
     height: 50px;
     background-color: #ccc;
     line-height: 50px;
-    margin-left: 120px;
+    margin-left: 50px;
     font-size: 16px;
 }
 .spemessage span{
@@ -48,10 +48,9 @@
     margin-left: 80px;
 }
 .update{
-    width: 300px;
+    width: 800px;
     height: 400px;
-    border: 1px solid;
-    margin-left: 250px;
+    margin-left: 25px;
     margin-top: 50px;
     overflow: auto;
 }
@@ -60,16 +59,39 @@
 }
 .update h2{
     display: inline-block;
-    margin-left: 95px;
+    margin-left: 325px;
+    margin-bottom: 25px;
+}
+.update table {
+    border-collapse: collapse;
+}
+th{
+    background-image: linear-gradient(to bottom,#fff,#ccc);
+}
+table,th,tr,td{
+    border: 1px solid #000;
+}
+th,td{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}
+tr:nth-child(odd){
+    background-color: #fff;
 }
 .update input{
     margin-top: 10px;
     margin-left: 25px;
     font-size: 18px;
+    width: 20px;
+    height: 20px;
 }
 #addbtn{
     margin-top: 55px;
-    margin-left: 95px;
+    margin-left: 325px;
     width: 90px;
     height: 45px;
 }

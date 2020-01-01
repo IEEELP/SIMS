@@ -18,9 +18,24 @@
         <div class="update">
             <h2>宿舍学生</h2>
             <form action="/DormitoryController?sims=6&dormitoryid=${dor.id}" method="post">
-                <c:forEach items="${student}" var="stu"><!--显示没有的所有学生-->
-                <input type="checkbox" name="studentid" value="${stu.id}" >${stu.name}<br>
-                </c:forEach>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>生日</th>
+                        <th>性别</th>
+                    </tr>
+                    <c:forEach items="${student}" var="stu">
+                        <tr>
+                            <td><input type="checkbox" name="studentid" value="${stu.id}"></td>
+                            <td>${stu.sno}</td>
+                            <td>${stu.name}</td>
+                            <td>${stu.birthdayStr}</td>
+                            <td>${stu.sexStr}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
                 <input type="submit"  value="提交" id="addbtn">
             </form>
         </div>
