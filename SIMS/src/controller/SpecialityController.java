@@ -95,9 +95,7 @@ public class SpecialityController extends HttpServlet {
             }
         }else if (sims==6){ //注册(给学生添加专业)
             String specialityid = request.getParameter("specialityid");
-            System.out.println(specialityid);
             String[] values = request.getParameterValues("studentid") ;
-            System.out.println(values[0]);
             if(values!=null&&values.length>0){
                 try {
                     studentService.updateStudentSpeciality(Integer.parseInt(specialityid),values);
